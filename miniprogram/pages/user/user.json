@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "l-icon":"/components/icon",
+    "tabbar":"/components/xxh-tabbar",
+    "l-button": "/components/button"
+  }
+}

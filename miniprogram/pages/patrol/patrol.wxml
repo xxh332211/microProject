@@ -1,0 +1,16 @@
+<!--miniprogram/pages/main/patrol/patrol.wxml-->
+<view class="main">
+  <view class="content">
+    <!-- <l-grid l-class="grid" show-border="{{true}}" bind:lintap="tabHandle">
+      <l-grid-item wx:for="{{menu}}" wx:key="index" key="{{index}}" slot="{{index}}" cell="{{item}}">
+        <l-icon name="{{item.image}}" l-class='iconfont maincolor_c' size="60"/>
+        <view class="text">{{item.text}}</view>
+      </l-grid-item>
+    </l-grid> -->
+    <view class="single" bindtap="tabHandle" wx:for="{{menu}}" wx:key="index" key="{{index}}" slot="{{index}}" data-cell="{{item}}">
+      <image src="../../static/{{item.image}}"/>
+      <text>{{item.text}}</text>
+    </view>
+  </view>
+</view>
+<tabbar currentIndex="0"></tabbar>

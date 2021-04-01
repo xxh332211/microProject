@@ -1,0 +1,54 @@
+<!--miniprogram/pages/patrol/community/community.wxml-->
+<view class="main">
+  <l-search-bar wx:if="{{patrolType==='new'}}" value="{{keyword}}" placeholder="搜索" bind:linfocus="beginSearch" bind:linchange="search" bind:lincancel="cancleSearch" bind:linconfirm="search"/>
+  <view class="search_list" wx:if="{{showSearchList}}">
+    <l-list title="{{item.name}}" left-gap="30" wx:for="{{searchList}}" wx:key="index" bind:lintap="selectSearch" data-item="{{item}}"></l-list>
+    <view wx:if="{{searchList.length<1}}" style="width:100%;margin-top:100rpx;text-align:center"><text style="width:100%;text-align:center;font-size:30rpx;">无搜索结果</text></view>
+  </view>
+  <view class="location">
+    <l-list title="区域" icon-size="40" icon="quyu" l-class-icon="iconfont maincolor_c" right-desc="{{position}}"></l-list>
+    <picker mode="selector" bindchange="selectComunitee" range-key="name" range="{{committee}}">
+      <l-list title="居委" icon-size="40" icon="baohanxiaoqusvg" l-class-icon="iconfont maincolor_c" right-desc="{{s_committee.name}}"></l-list>
+    </picker>
+    <picker mode="selector" bindchange="selectCommunity" range-key="name" range="{{community}}">
+      <l-list title="小区" icon-size="40" icon="xiaoqu" l-class-icon="iconfont maincolor_c" right-desc="{{s_community.name}}"></l-list>
+    </picker>
+  </view>
+  <view class="total_point" wx:if="{{penalties.length>0}}">
+    <text>总得分</text>
+    <text>{{totalPoint}}</text>
+  </view>
+  <view class="penalties">
+      <l-collapse>
+        <view class="single" wx:for="{{penalties}}" wx:key="index">
+          <l-collapse-item l-body-class="l-body-class" l-title-class="l-title-class" customTitle="{{true}}">
+            <!--自定义标题-->
+            <view class="title" slot="title">
+              <view class="left">
+                <text class="single_name">{{item.name}}</text>
+                <text class="point">{{item.point}}</text>
+                <text class="decut">{{-item.deduct_points||"-"+0}}</text>
+              </view>
+              <view class="right">
+                <l-icon name="down" l-class="icon" size="16" color="#999" size="30"/>
+                <l-button bind:lintap="scoring"  l-class height="50" size="mini" shape="semicircle" plain="{{true}}" data-index="{{index}}" data-item="{{item}}" type="success">打分</l-button>
+              </view>
+            </view>
+            <view class="content">
+              <view class="description" wx:for="{{item.detail}}" wx:for-item="ele" wx:key="i" wx:for-index="i">
+                <view class="left">
+                  <text>{{ele.description}}</text>
+                </view>
+                <view class="right">
+                  <text>{{-ele.deduct_points||"-"+0}}</text>
+                </view>
+              </view>
+            </view>
+          </l-collapse-item>
+        </view>
+      </l-collapse>
+  </view>
+  <view class="btn" wx:if="{{penalties.length>0}}">
+    <l-button size="large" bind:lintap="upDecut" type="success">提交</l-button>
+  </view>
+</view>

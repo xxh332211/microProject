@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ec-canvas": "/echart/ec-canvas/ec-canvas",
+    "l-progress":"/components/progress"
+  }
+}

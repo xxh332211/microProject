@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText":"整改反馈",
+  "usingComponents": {
+    "l-icon":"/components/icon",
+    "l-button":"/components/button",
+    "l-image-picker":"/components/image-picker",
+    "l-textarea":"/components/textarea"
+  }
+}

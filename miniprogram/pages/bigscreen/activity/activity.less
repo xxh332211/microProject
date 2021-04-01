@@ -1,0 +1,93 @@
+@import '../../../font/init.wxss';
+@mainRed: #FF625D;
+page {
+  height: 100%;
+  background: @mainRed;
+}
+.activity {
+  width: 750rpx;
+  height: 100%;
+  background: #fff;
+  border-radius: 30rpx 30rpx 0 0;
+  overflow: auto;
+  box-sizing: border-box;
+  padding-top: 40rpx;
+  .forms {
+    width: 673rpx;
+    background: #F5F6FA;
+    border: 2px solid #F5F6FA;
+    border-radius: 30rpx;
+    margin: 0 auto;
+    padding-left: 40rpx;
+    padding-right: 40rpx;
+    padding-top: 32rpx;
+    padding-bottom: 32rpx;
+    box-sizing: border-box;
+    .single {
+      margin-bottom: 50rpx;
+    }
+    .inputtitle {
+      font-size: 32rpx;
+      font-weight: 700;
+      color: #3E455A;
+      margin-bottom: 20rpx;
+    }
+    .input_box {
+      height: 80rpx;
+      background: #FFFFFF;
+      border: 2rpx solid #DDE1ED;
+      opacity: 1;
+      border-radius: 30rpx;
+      .input_label::before {
+        content: '' !important;
+        display: none !important;
+      }
+    }
+    .textbox {
+      width: 592rpx;
+      height: 200rpx;
+      background: #FFFFFF;
+      border: 2rpx solid #DDE1ED;
+      opacity: 1;
+      border-radius: 30rpx;
+    }
+    .picker {
+      // width: 100rpx;
+      border-radius: 20rpx;
+      overflow: hidden;
+      margin-right: 30rpx;
+      background: #fff;
+    }
+    .picker-index--l-grid-item {
+      margin-bottom: 30rpx;
+    }
+    .picker-index--min-img {
+      margin:0 !important;
+    }
+    .picker_date {
+      display: inline-block;
+      padding: 10rpx 20rpx;
+      background: #FF5175;
+      // width: 200rpx;
+      color: #fff;
+      border-radius: 10rpx;
+    }
+    .submitbtn {
+      margin-top: 60rpx;
+      margin-bottom: 30rpx;
+      width: 590rpx;
+      .btn {
+        width: 590rpx;
+        height: 84rpx;
+        background: #FF5175;
+        opacity: 1;
+        border-radius: 30rpx;
+        color: #fff;
+        font-size: 32rpx;
+      }
+    }
+
+  }
+
+
+}

@@ -1,0 +1,46 @@
+.main {
+  padding: 50rpx;
+}
+.main .detail {
+  margin-bottom: 30rpx;
+}
+.main .detail .title {
+  margin-bottom: 30rpx;
+}
+.main .detail .title text {
+  color: #34bfa3;
+}
+.main .score .forms .single {
+  padding: 20rpx;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px #ccc;
+  margin-bottom: 50rpx;
+  margin-top: 50rpx;
+}
+.main .score .forms .single .btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 5rpx;
+  width: 100%;
+}
+.main .score .forms .single .line {
+  display: flex;
+  align-items: center;
+}
+.main .score .forms .single .line .detail {
+  width: 570rpx;
+  margin-right: 30rpx;
+}
+.main .score .forms .single .line .detail text {
+  font-size: 33rpx;
+}
+.main .score .forms .single .line .input_number {
+  border: 1px solid #ccc;
+  width: 200rpx;
+}
+.main .score .forms .single .line .input_number input {
+  text-indent: 5rpx;
+  text-align: center;
+}

@@ -1,0 +1,13 @@
+{
+  "navigationBarBackgroundColor":"#ffffff",
+  "navigationBarTitleText":"登录",
+  "navigationBarTextStyle":"black",
+  "usingComponents": {
+    "l-form-item":"/components/form-item",
+    "l-input":"/components/input",
+    "l-button":"/components/button",
+    "toast":"/components/toast",
+    "l-form":"/components/form",
+    "l-icon":"/components/icon"
+  }
+}

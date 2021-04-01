@@ -1,0 +1,61 @@
+/* miniprogram/pages/login/login.wxss */
+@import '../../font/init.less';
+.login {
+  width: 750rpx;
+}
+
+.login .login_header {
+  width: 750rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 150rpx;
+  margin-top: 100rpx;
+  .title {
+    font-size: 48rpx;
+    font-weight: bold;
+    color:#3E455A;
+  }
+  .subtitle {
+    color: #858FAD;
+    font-size: 24rpx;
+    margin-top: 20rpx;
+  }
+}
+
+.forms {
+  width: 590rpx;
+  margin-left: 80rpx;
+  margin-top: 60rpx;
+  .iconfont {
+    color:#858FAD !important;
+  }
+  .input_box {
+    height: 80rpx;
+    background: #FFFFFF;
+    border: 2rpx solid #DDE1ED;
+    opacity: 1;
+    border-radius: 30rpx;
+    .input_label::before{
+      content:'' !important;
+      display:none !important;
+    }
+  }
+  .submitbtn {
+    margin-top: 200rpx;
+    margin-bottom: 30rpx;
+    width: 590rpx;
+    .btn {
+      width: 590rpx;
+      height: 84rpx;
+      background: #3E455A;
+      opacity: 1;
+      border-radius: 30rpx;
+      color: #fff;
+      font-size: 32rpx;
+    }
+  }
+  
+}
+

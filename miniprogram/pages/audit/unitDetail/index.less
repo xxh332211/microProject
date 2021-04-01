@@ -1,0 +1,33 @@
+@import '../../../font/init.wxss';
+@mainRed: #FF625D;
+.main {
+  padding-left: 39rpx;
+  padding-right: 39rpx;
+  margin-top: 44rpx;
+  padding-bottom: 200rpx;
+  .tab {
+    background: #F5F6FA;
+    border-radius: 36px;
+    overflow: hidden;
+    margin-bottom: 44rpx;
+    .active {
+      background: @mainRed;
+      font-size: 28rpx;    
+      background: #FF5175;
+      opacity: 1;
+      border-radius: 36px;
+      transition: all .5s;
+      box-sizing: border-box;
+    }
+    .inactive {
+      box-sizing: border-box;
+      background: @mainRed;
+      font-size: 28rpx;
+      opacity: 1;
+      transition: all .5s;
+      border-radius: 36px;
+      background: rgba(0, 0, 0, 0);
+      color: #858FAD;
+    }
+  }
+}

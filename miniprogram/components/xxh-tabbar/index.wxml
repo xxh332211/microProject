@@ -1,0 +1,8 @@
+<view class="tabbar">
+    <view class="item" bindtap="go" data-hi="{{currentIndex===index}}" data-url="{{item.url}}" wx:for="{{list}}" wx:key="index">
+        <view>
+            <l-icon name="{{item.icon}}" l-class='iconfont {{currentIndex===index?"active":"nagetive"}}' size="40"/>
+        </view>
+        <text class="text" class='{{currentIndex===index?"active":"nagetive"}}'>{{item.name}}</text>
+    </view>
+</view>

@@ -1,0 +1,104 @@
+.main {
+  background: #F5F6FA;
+  opacity: 1;
+  border-radius: 10px;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  box-sizing: border-box;
+  width: 670rpx;
+  padding-bottom: 60rpx;
+}
+.main .header {
+  display: flex;
+  justify-content: space-between;
+}
+.main .header .title {
+  margin-top: 32rpx;
+}
+.main .header .title .main_title {
+  font-size: 36rpx;
+  font-weight: 500;
+  line-height: 1.5em;
+  color: #3E455A;
+}
+.main .header .title .sub_title {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  line-height: 1.5em;
+  color: #858FAD;
+}
+.main .header .tab {
+  width: 200rpx;
+  margin-top: 50rpx;
+}
+.main .header .tab .inactive {
+  width: 84rpx;
+  opacity: 1;
+  border-radius: 20px;
+  font-size: 24rpx;
+  padding: 10rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  color: #858FAD;
+}
+.main .header .tab .active {
+  width: 84rpx;
+  background: #858FAD;
+  opacity: 1;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 10rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.main .content {
+  margin-top: 52rpx;
+}
+.main .content .species {
+  display: flex;
+  margin-bottom: 30rpx;
+}
+.main .content .species .specie {
+  width: 25%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .content .species .specie text {
+  font-size: 24rpx;
+  color: #3E455A;
+}
+.main .content .list {
+  height: 500rpx;
+}
+.main .content .list .row {
+  display: flex;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  padding-left: 10rpx;
+}
+.main .content .list .row:nth-child(odd) {
+  width: 588rpx;
+  background: #E7EAF4;
+  opacity: 1;
+  border-radius: 30px;
+}
+.main .content .list .row:nth-child(even) {
+  width: 588rpx;
+  opacity: 1;
+  border-radius: 30px;
+}
+.main .content .list .row .col {
+  font-size: 24rpx;
+  width: 25%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.main .content .list .row .col.important {
+  color: #ff5175;
+  font-weight: bold;
+}

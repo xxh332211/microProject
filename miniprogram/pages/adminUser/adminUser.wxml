@@ -1,0 +1,45 @@
+<!--miniprogram/pages/adminUser/adminUser.wxml-->
+<view class="main">
+  <view class="banner">
+    <view class="avatar">
+      <image class="pic" src="../../static/avatar.png"></image>
+    </view>
+    <view class="username">{{user.real_name}}</view>
+  </view>
+  <view class="content">
+    <view class="notice">
+      <l-icon name="tongzhi" l-class="iconfont"></l-icon>
+      <text>还有{{mainData.total}}巡查问题等待反馈</text>
+    </view>
+    <view class="big_nav" bindtap="go" data-url="/pages/audit/feedback/feedback">
+      <view class="left">
+        <view class="title">
+          <l-icon name="yemianpeizhi" l-class="iconfont"></l-icon>
+          <text>整改反馈</text>
+        </view>
+        <view class="subtitle">
+          24小时内反馈
+        </view>
+      </view>
+      <view class="right">
+        <l-icon name="toRight-fill" l-class="iconfont"></l-icon>
+      </view>
+    </view>
+
+    <view class="big_nav" bindtap="go" data-url="/pages/bigscreen/activity/activity">
+      <view class="left">
+        <view class="title">
+          <l-icon name="yemianpeizhi" l-class="iconfont"></l-icon>
+          <text>社区活动</text>
+        </view>
+        <view class="subtitle">
+          <!-- 24小时内反馈 -->
+        </view>
+      </view>
+      <view class="right">
+        <l-icon name="toRight-fill" l-class="iconfont"></l-icon>
+      </view>
+    </view>
+  </view>
+</view>
+<tabbar current="adminUser"></tabbar>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "l-grid":"/components/grid",
+    "l-icon":"/components/icon",
+    "l-grid-item":"/components/grid-item",
+    "tabbar":"/components/xxh-tabbar"
+  },
+  "navigationBarTitleText": ""
+}

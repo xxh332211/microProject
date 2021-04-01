@@ -1,0 +1,26 @@
+<!--pages/audit/communityDetail/index.wxml-->
+<view class="main">
+  <view class="tab">
+    <l-segment height="64" bind:linchange="changeTabs" active-color="#ffffff" l-tab-image-class="tab-image" has-line="{{false}}" l-class="segment-view"   
+               l-active-class="active" l-inactive-class="inactive" activeKey="{{current}}">
+        <l-segment-item key="map" slot="map" data-cell="map">
+          <view class="tab-item">
+            <view>社区地图</view>
+          </view>
+        </l-segment-item>
+        <l-segment-item key="summary" slot="summary" data-cell="summary">
+          <view class="tab-item">
+            <view>问题汇总</view>
+          </view>
+        </l-segment-item>
+        <l-segment-item key="analysis" slot="analysis" data-cell="analysis">
+          <view class="tab-item">
+            <view>问题分析</view>
+          </view>
+        </l-segment-item>
+    </l-segment>
+  </view>
+  <cu-map wx:if="{{current==='map'}}"></cu-map>
+  <cu-summary wx:if="{{current==='summary'}}" type="{{type}}"></cu-summary>
+  <cu-analysis wx:if="{{current==='analysis'}}" type="{{type}}"></cu-analysis>
+</view>

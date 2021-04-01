@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor":"#FF625D",
+  "navigationBarTitleText":"用户中心",
+  "usingComponents": {
+    "l-icon":"/components/icon",
+    "tabbar":"/components/xxh-tabbar2"
+  }
+}

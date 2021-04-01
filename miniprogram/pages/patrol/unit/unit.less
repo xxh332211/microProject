@@ -1,0 +1,109 @@
+@import "../../../font/init.less";
+.main {
+  padding-top:30rpx;
+  .search_list {
+    width:750rpx;
+    height: calc(100% - 90rpx);
+    background: #fff;
+    position: absolute;
+    z-index: 999;
+  }
+  .location {
+    margin-top: 50rpx;
+    padding-left: 20rpx;
+  }
+  .total_point {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 710rpx;
+    margin-left: 20rpx;
+    background-color: #34bfa3;
+    padding: 10rpx;
+    box-sizing: border-box;
+    padding-left:30rpx;
+    padding-right: 30rpx;
+    margin-top:20px;
+    border-radius: 6px;
+    text{
+      color:#fff;
+    }
+  }
+  .penalties {
+    margin-top: 20rpx;
+    padding-left:10rpx;
+    padding-right: 10rpx;
+    .single {
+      .title {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          width: 520rpx;
+          height: 100%;
+          text {
+            margin-right: 25rpx;
+          }
+          .single_name {
+            width:290rpx;
+          }
+          .point {
+            color: red;
+          }
+          .decut {
+            color: green;
+          }
+        }
+        .right {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          .icon {
+            margin-right:20rpx;
+          }
+        }
+      }
+      .content {
+        .description {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 100%;
+          margin-bottom: 20rpx;
+          .left,.right {
+            display: flex;
+            align-items: center;
+            height: 100%;
+          }
+          .left {
+            width: 600rpx;
+            text {
+              width: 100%;
+              text-indent: 50rpx;
+            }
+          }
+          .right {
+            width: 100rpx;
+            text {
+              text-align: center;
+              width:100%;
+              color: green;
+              font-size:35rpx;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+  .btn {
+    text-align:center;
+    margin-top:70rpx;
+    padding-bottom:100rpx;
+  }
+}

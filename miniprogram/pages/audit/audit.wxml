@@ -1,0 +1,91 @@
+<!--miniprogram/pages/audit/audit.wxml-->
+<view class="main">
+  <view class="banner">
+    <view class="maintitle">
+      <view class="location">
+        <l-icon name="icon--" l-class='iconfont white_f' size="60"/>
+        <text class="title">梅陇镇</text>
+      </view>
+      <view class="lasttime">
+        <text>截止时间: {{date}}</text>
+      </view>
+    </view>
+    <image src="../../static/banner.png"></image>
+  </view>
+  <view class="content">
+    <view class="tab">
+      <view wx:if="{{user.type == 2||user.type==3||user.type==4}}" class="single {{current==='community'?'selected':''}}" data-type="community" bindtap="tap">
+        <text>居住地</text>
+        <view class="line"></view>
+      </view>
+      <view wx:if="{{user.type == 2||user.type==3||user.type == 8||user.type==9}}" class="single {{current==='village'?'selected':''}}" data-type="village" bindtap="tap">
+        <text>行政村</text>
+        <view class="line"></view>
+      </view>
+      <view wx:if="{{user.type == 2||user.type==3||user.type==6}}" class="single {{current==='unit'?'selected':''}}" data-type="unit" bindtap="tap">
+        <text>单位</text>
+        <view class="line"></view>
+      </view>
+      <view wx:if="{{user.type == 2||user.type==3}}" class="single {{current==='street'?'selected':''}}" data-type="street" bindtap="tap">
+        <text>沿街街道</text>
+        <view class="line"></view>
+      </view>
+    </view>
+    <view class="info">
+      <view class="little" bindtap="goFeedback">
+        <view class="title">今日问题</view>
+        <view class="info_content">
+          <view>
+            <view class="top">{{mainData.today_pending}}</view>
+            <view class="bottom">待处理</view>
+          </view>
+          <view>
+            <view class="top">{{mainData.today_total}}</view>
+            <view class="bottom">总数</view>
+          </view>
+        </view>
+      </view>
+      <view class="little" bindtap="goFeedback">
+        <view class="title">累计问题</view>
+        <view class="info_content">
+          <view>
+            <view class="top">{{mainData.total_pending}}</view>
+            <view class="bottom">待处理</view>
+          </view>
+          <view>
+            <view class="top">{{mainData.total}}</view>
+            <view class="bottom">总数</view>
+          </view>
+        </view>        
+      </view>
+      <view class="score" bindtap="goFeedback">
+        <view class="left">
+          <view class="title">
+            总分
+          </view>
+          <view class="bottom">
+            95.95
+            <text>分</text>
+          </view>
+        </view>
+        <view class="right">
+          <view class="top">
+            <text>+0.95</text>
+            分
+          </view>
+          <view class="bottom">
+            较上次评分
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="detail">
+      <community wx:if="{{current==='community'}}"></community>
+      <unit wx:if="{{current==='unit'}}"></unit>
+      <street wx:if="{{current==='street'}}"></street>
+      <village wx:if="{{current==='village'}}"></village>
+    </view>
+  </view>
+</view>
+
+<tabbar current="audit"></tabbar>

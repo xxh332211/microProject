@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText":"分类时效",
+  "usingComponents": {
+    "l-icon":"/components/icon",
+    "tabbar":"/components/xxh-tabbar2",
+    "l-progress":"/components/progress",
+    "summary":"/pages/audit/component/summary"
+  }
+}

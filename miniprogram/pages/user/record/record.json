@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "l-icon":"/components/icon",
+    "l-tabpanel":"/components/tabpanel",
+    "l-tabs": "/components/tabs",
+    "l-list":"/components/list"
+  }
+}

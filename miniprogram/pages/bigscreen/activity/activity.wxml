@@ -1,0 +1,48 @@
+<view class="activity">
+  <view class="forms">
+    <l-form name="login" l-form-btn-class="l-form-btn-class" bind:linsubmit="submit">
+      <view class="single">
+        <view class="inputtitle">活动标题</view>
+        <l-input id="title" l-class="input_box" value="{{user.title}}" bind:lininput="inputform"
+          bind:linblur="inputform" data-key="title" hide-label show-row="{{false}}" />
+      </view>
+
+      <view class="single">
+        <view class="inputtitle">活动类型</view>
+        <l-radio-group bind:linchange="inputform" data-key="activity_type">
+          <l-radio select-color="#FF625D" key="5">宣传培训（社区）</l-radio>
+          <l-radio select-color="#FF625D" key="6">突发事件（社区）</l-radio>
+          <l-radio select-color="#FF625D" key="7">日常巡查（社区）</l-radio>
+          <l-radio select-color="#FF625D" key="8">检查</l-radio>
+        </l-radio-group>
+      </view>
+      <view class="single">
+        <view class="inputtitle">活动日期</view>
+        <picker mode="date" value="{{updata.start_time}}" start="2021-01-01" end="2030-12-31" bindchange="inputform"
+          data-key="start_time">
+          <view class="picker_date">
+            {{updata.start_time}}
+          </view>
+        </picker>
+      </view>
+      <view class="single">
+        <view class="inputtitle">活动内容</view>
+        <l-textarea l-class="textbox" placeholder="说说你的想法吧..." id="title" value="{{updata.content}}"
+          bind:lininput="inputform" bind:linblur="inputform" data-key="content" hide-label show-row="{{false}}" />
+      </view>
+
+
+
+      <view class="single">
+        <view class="inputtitle">活动图片</view>
+        <l-image-picker style="margin-top:30rpx;" size="4" urls="{{updata.image_url}}" l-item-class="picker_b" l-class="picker_c"
+          bind:linchange="onImgChangeTap" bind:linremove="onRemoveImgTap" size-type="compressed" l-item-class="picker"
+          count="9" />
+      </view>
+      <view slot="submit" class="submitbtn">
+          <l-button type="success" l-class="btn">提交</l-button>
+          <!-- <l-button type="success" width="650" bind:getuserinfo="getUserInfo" open-type="getUserInfo">提交</l-button> -->
+        </view>
+    </l-form>
+  </view>
+</view>

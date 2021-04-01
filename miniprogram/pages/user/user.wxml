@@ -1,0 +1,24 @@
+<!--miniprogram/pages/user/user.wxml-->
+<view class="top">
+  <view class="user">
+    <view class="avatar">
+      <image src="../../static/avatar.png"></image>
+    </view>
+    <text class="username">{{user.user_name}}</text>
+  </view>
+</view>
+<view class="nav">
+  <view class="single" bindtap="tabHandle" wx:for="{{menu}}" wx:key="index" key="{{index}}" data-item="{{item}}">
+    <view class="left">
+      <l-icon name="{{item.image}}" l-class='iconfont maincolor_c' size="60"></l-icon>
+      <text>{{item.text}}</text>
+    </view>
+    <view class="right">
+      <l-icon name="toRight-fill" l-class='iconfont maincolor_c' size="60"></l-icon>
+    </view>
+  </view>
+</view>
+<view class="btn">
+  <l-button type="success">退出登录</l-button>
+</view>
+<tabbar currentIndex="1"></tabbar>

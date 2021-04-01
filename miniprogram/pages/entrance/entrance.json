@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "l-loading":"/components/loading",
+    "l-toast":"/components/toast"
+  }
+}

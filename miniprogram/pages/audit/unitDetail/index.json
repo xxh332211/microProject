@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-segment":"/components/segment",
+    "l-segment-item":"/components/segment-item",
+    "cu-total":"/pages/audit/component/total",
+    "cu-analysis":"/pages/audit/component/analysis",
+    "cu-summary":"/pages/audit/component/summary"
+  }
+}

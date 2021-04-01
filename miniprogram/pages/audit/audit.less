@@ -1,0 +1,184 @@
+@import '../../font/init.less';
+.main {
+  background: @mainRed;
+  .banner {
+    background: @mainRed;
+    width: 750rpx;
+    height: 243rpx;
+    position: relative;
+    overflow: hidden;
+    .maintitle {
+      position: absolute;
+      bottom: 40rpx;
+      left: 44rpx;
+      z-index: 888;
+      .location {
+        display: flex;
+        align-items: center;
+        .title {
+          font-size: 48rpx;
+          font-family: 'PingFang SC';
+          font-weight: 500;
+          color:#fff;
+          margin-left: 44rpx;
+        }
+      }
+      .lasttime {
+        padding-left: 103rpx;
+        color: #fff;
+        font-size: 24rpx;
+      }
+    }
+    image {
+      width: 750rpx;
+      height: 278rpx;
+      position: relative;
+      top:-17px;
+    }
+  }
+  .content {
+    height: 500rpx;
+    background: #fff;
+    border-radius: 15px 15px 0 0;
+    padding-top:20rpx;
+    .tab {
+      display: flex;
+      // padding-left: 40rpx;
+      box-sizing: border-box;
+      // justify-content: space-around;
+      .single {
+        width: 25%;
+        height: 84rpx;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        &.selected {
+          .line {
+            display: block;
+          }
+        }
+        .line {
+          width: 40rpx;
+          height: 4rpx;
+          background: #FF5175;
+          opacity: 1;
+          position: absolute;
+          bottom: 6rpx;
+          left: 50%;
+          transform: translateX(-24rpx);
+          display: none;
+          
+        }
+        text {
+          font-size: 32rpx;
+          font-family: 'PingFang';
+          color: #858FAD;
+        }
+      }
+    }
+    .info {
+      padding-left: 40rpx;
+      margin-top: 20rpx;
+      display: flex;
+      flex-wrap: wrap;
+      .little {
+        width: 326rpx;
+        height: 268rpx;
+        background: #F5F6FA;
+        opacity: 1;
+        border-radius: 30rpx;
+        margin-right: 18rpx;
+        .title {
+          font-size: 36rpx;
+          font-weight: 600;
+          color: #3E455A;
+          width: 100%;
+          text-align: center;
+          margin-top: 32rpx;
+          font-family: "DFKai-SB";
+        }
+        .info_content {
+          width: 100%;
+          display: inline-flex;
+          justify-content: space-evenly;
+          align-items: center;
+          &>view {
+            margin-top: 40rpx;
+            .top {
+              width: 100%;
+              display: inline-flex;
+              justify-content: center;       
+              font-size: 48rpx;
+              font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+              font-weight: 400;
+              line-height: 1em;
+            }
+            .bottom {
+              font-size: 24rpx;
+              text-align: center;
+              font-weight: 500;
+              color: #858FAD;
+            }
+          }
+        }
+      }
+      .score {
+        width: 670rpx;
+        height: 192rpx;
+        background: #F5F6FA;
+        opacity: 1;
+        border-radius: 30rpx;
+        margin-top: 20rpx;
+        display: flex;
+        justify-content: space-between;
+        padding-left:50rpx;
+        padding-right: 68rpx;
+        box-sizing: border-box;
+        .left,.right {
+          display: inline-flex;
+          height: 100%;
+          flex-direction: column;
+          justify-content: center;
+          line-height: 1em;
+        }
+        .left {
+          .title {
+            font-size: 36rpx;
+            color: #3E455A;
+          }
+          .bottom {
+            margin-top: 30rpx;
+            color:#3E455A;
+            font-weight: bold;
+            font-size: 48rpx;
+            font-family: Impact;
+            text {
+              font-size: 24rpx;
+              color: #858FAD;
+              font-family: fantasy;
+            }
+          }
+        }
+        .right {
+          align-items: center;
+          .top {
+            color: #858FAD;
+            font-size: 24rpx;
+            text {
+              color: #FF5175;
+              font-size: 48rpx;
+              font-family: Impact;
+            }
+            
+          }
+          .bottom {
+            color: #858FAD;
+            font-size: 24rpx;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+  }
+}

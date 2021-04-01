@@ -1,0 +1,34 @@
+<!--miniprogram/pages/login/login.wxml-->
+<view class="login">
+  <view class="login_header">
+    <view class="title">登录</view>
+    <view class="subtitle">垃圾分类E览通</view>
+  </view>
+  <view class="forms">
+    <l-form name="login" l-form-btn-class="l-form-btn-class" bind:linsubmit="submit">
+      <l-form-item label-width="60" l-form-item-class="input_box" l-form-label-class="input_label" label-slot="{{true}}" label="用户名:" name="username"
+         tip-type="text">
+        <view slot="label">
+          <l-icon name="user1" l-class="iconfont" size="50"></l-icon>
+        </view>
+        <l-input id="username" value="{{user.username}}" bind:lininput="inputform" bind:linblur="inputform" data-key="username"  hide-label show-row="{{false}}" />
+      </l-form-item>
+      <!-- rules="{{rules.password}}" -->
+      <l-form-item label-width="60" l-form-label-class="input_label" l-form-item-class="input_box" label-slot="{{true}}" label="密码:" name="password"
+         tip-type="text">
+        <view slot="label">
+          <l-icon name="lockxxh" l-class="iconfont" size="50"></l-icon>
+        </view>
+        <l-input bind:lininput="inputform" bind:linblur="inputform" data-key="password" id="password" type="password" value="{{user.password}}" hide-label show-row="{{false}}" />
+      </l-form-item>
+      <view slot="submit" class="submitbtn">
+        <l-button type="success" l-class="btn">提交</l-button>
+        <!-- <l-button type="success" width="650" bind:getuserinfo="getUserInfo" open-type="getUserInfo">提交</l-button> -->
+      </view>
+      <view slot="reset">
+        <!-- <l-button type="default" plain width="650">重置</l-button> -->
+      </view>
+    </l-form>
+  </view>
+</view>
+<toast />

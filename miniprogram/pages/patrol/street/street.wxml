@@ -1,0 +1,8 @@
+<!--miniprogram/pages/patrol/community/community.wxml-->
+<view class="main">
+  <l-search-bar placeholder="搜索" bind:linconfirm="search"/>
+  <view class="location">
+    <l-list title="区域" icon-size="40" icon="quyu" l-class-icon="iconfont maincolor_c" right-desc="{{position}}"></l-list>
+  </view>
+  <l-list bind:lintap="tapHandle" title="{{item.name}}" desc="{{item.create_time}}" gap="20" tagShape="circle" tag-color="#34bfa3" tag-position="right" wx:for="{{streetList}}" wx:key="index" data-item="{{item}}" data-type="unit"></l-list>
+</view>

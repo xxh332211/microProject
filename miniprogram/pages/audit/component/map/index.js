@@ -1,0 +1,52 @@
+"use strict";
+let QQMapWX = require('../../../../static/qqmap-wx-jssdk.min.js');
+let qqmapsdk = new QQMapWX({
+    key: '4JSBZ-N3QHU-P5UVN-BOECU-7USIT-LMFKQ'
+});
+let getLcations = (arr) => {
+    return new Promise((resolve, reject) => {
+        let index = 0;
+        let last = arr.length - 1;
+        let locations = [];
+        let getlocation = () => {
+            qqmapsdk.geocoder({
+                address: '徐汇区' + arr[index],
+                region: '上海市',
+                success: (res) => {
+                    locations.push(res.result);
+                    index = index + 1;
+                    if (index <= last) {
+                        getlocation();
+                    }
+                    else {
+                        resolve(locations);
+                    }
+                },
+                fail: (res) => {
+                    wx.showToast({
+                        title: '地址解析失败',
+                        icon: 'none',
+                        duration: 2000
+                    });
+                    reject(res);
+                }
+            });
+        };
+        getlocation();
+    });
+};
+Component({
+    properties: {
+        qqmapsdk: null
+    },
+    data: {},
+    methods: {},
+    attached() {
+        getLcations(['梅陇镇', '梅陇二村']).then((res) => {
+            console.log(res);
+        });
+    },
+    detached() {
+    },
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsSUFBSSxPQUFPLEdBQUcsT0FBTyxDQUFDLDBDQUEwQyxDQUFDLENBQUM7QUFDbEUsSUFBSSxRQUFRLEdBQUcsSUFBSSxPQUFPLENBQUM7SUFDekIsR0FBRyxFQUFDLHFDQUFxQztDQUMxQyxDQUFDLENBQUE7QUFDRixJQUFJLFdBQVcsR0FBRyxDQUFDLEdBQWlCLEVBQUUsRUFBRTtJQUN0QyxPQUFPLElBQUksT0FBTyxDQUFDLENBQUMsT0FBTyxFQUFDLE1BQU0sRUFBQyxFQUFFO1FBQ25DLElBQUksS0FBSyxHQUFHLENBQUMsQ0FBQTtRQUNiLElBQUksSUFBSSxHQUFHLEdBQUcsQ0FBQyxNQUFNLEdBQUcsQ0FBQyxDQUFBO1FBQ3pCLElBQUksU0FBUyxHQUFRLEVBQUUsQ0FBQTtRQUN2QixJQUFJLFdBQVcsR0FBRyxHQUFFLEVBQUU7WUFDbEIsUUFBUSxDQUFDLFFBQVEsQ0FBQztnQkFDaEIsT0FBTyxFQUFFLEtBQUssR0FBQyxHQUFHLENBQUMsS0FBSyxDQUFDO2dCQUN6QixNQUFNLEVBQUMsS0FBSztnQkFDWixPQUFPLEVBQUMsQ0FBQyxHQUFPLEVBQUMsRUFBRTtvQkFDakIsU0FBUyxDQUFDLElBQUksQ0FBQyxHQUFHLENBQUMsTUFBTSxDQUFDLENBQUE7b0JBQzFCLEtBQUssR0FBRyxLQUFLLEdBQUcsQ0FBQyxDQUFBO29CQUNqQixJQUFJLEtBQUssSUFBRyxJQUFJLEVBQUU7d0JBQ2hCLFdBQVcsRUFBRSxDQUFBO3FCQUNkO3lCQUFJO3dCQUNILE9BQU8sQ0FBQyxTQUFTLENBQUMsQ0FBQTtxQkFDbkI7Z0JBQ0gsQ0FBQztnQkFDRCxJQUFJLEVBQUMsQ0FBQyxHQUFPLEVBQUMsRUFBRTtvQkFDZCxFQUFFLENBQUMsU0FBUyxDQUFDO3dCQUNYLEtBQUssRUFBRSxRQUFRO3dCQUNmLElBQUksRUFBQyxNQUFNO3dCQUNYLFFBQVEsRUFBQyxJQUFJO3FCQUNkLENBQUMsQ0FBQTtvQkFDRixNQUFNLENBQUMsR0FBRyxDQUFDLENBQUE7Z0JBQ2IsQ0FBQzthQUNGLENBQUMsQ0FBQTtRQUNOLENBQUMsQ0FBQTtRQUNELFdBQVcsRUFBRSxDQUFBO0lBQ2YsQ0FBQyxDQUFDLENBQUE7QUFDSixDQUFDLENBQUE7QUFDRCxTQUFTLENBQUM7SUFDUixVQUFVLEVBQUM7UUFDVCxRQUFRLEVBQUMsSUFBSTtLQUNkO0lBQ0QsSUFBSSxFQUFDLEVBQ0o7SUFDRCxPQUFPLEVBQUUsRUFFUjtJQUVELFFBQVE7UUFDTixXQUFXLENBQUMsQ0FBQyxLQUFLLEVBQUMsTUFBTSxDQUFDLENBQUMsQ0FBQyxJQUFJLENBQUMsQ0FBQyxHQUFPLEVBQUMsRUFBRTtZQUMxQyxPQUFPLENBQUMsR0FBRyxDQUFDLEdBQUcsQ0FBQyxDQUFBO1FBQ2xCLENBQUMsQ0FBQyxDQUFBO0lBQ0osQ0FBQztJQUNELFFBQVE7SUFFUixDQUFDO0NBQ0YsQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsibGV0IFFRTWFwV1ggPSByZXF1aXJlKCcuLi8uLi8uLi8uLi9zdGF0aWMvcXFtYXAtd3gtanNzZGsubWluLmpzJyk7XHJcbmxldCBxcW1hcHNkayA9IG5ldyBRUU1hcFdYKHtcclxuICBrZXk6JzRKU0JaLU4zUUhVLVA1VVZOLUJPRUNVLTdVU0lULUxNRktRJ1xyXG59KVxyXG5sZXQgZ2V0TGNhdGlvbnMgPSAoYXJyOkFycmF5PHN0cmluZz4pID0+e1xyXG4gIHJldHVybiBuZXcgUHJvbWlzZSgocmVzb2x2ZSxyZWplY3QpPT57XHJcbiAgICBsZXQgaW5kZXggPSAwXHJcbiAgICBsZXQgbGFzdCA9IGFyci5sZW5ndGggLSAxXHJcbiAgICBsZXQgbG9jYXRpb25zID0gPGFueT5bXVxyXG4gICAgbGV0IGdldGxvY2F0aW9uID0gKCk9PntcclxuICAgICAgICBxcW1hcHNkay5nZW9jb2Rlcih7XHJcbiAgICAgICAgICBhZGRyZXNzOiAn5b6Q5rGH5Yy6JythcnJbaW5kZXhdLFxyXG4gICAgICAgICAgcmVnaW9uOifkuIrmtbfluIInLFxyXG4gICAgICAgICAgc3VjY2VzczoocmVzOmFueSk9PntcclxuICAgICAgICAgICAgbG9jYXRpb25zLnB1c2gocmVzLnJlc3VsdClcclxuICAgICAgICAgICAgaW5kZXggPSBpbmRleCArIDFcclxuICAgICAgICAgICAgaWYgKGluZGV4IDw9bGFzdCkge1xyXG4gICAgICAgICAgICAgIGdldGxvY2F0aW9uKClcclxuICAgICAgICAgICAgfWVsc2V7XHJcbiAgICAgICAgICAgICAgcmVzb2x2ZShsb2NhdGlvbnMpXHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgIH0sXHJcbiAgICAgICAgICBmYWlsOihyZXM6YW55KT0+e1xyXG4gICAgICAgICAgICB3eC5zaG93VG9hc3Qoe1xyXG4gICAgICAgICAgICAgIHRpdGxlOiAn5Zyw5Z2A6Kej5p6Q5aSx6LSlJyxcclxuICAgICAgICAgICAgICBpY29uOidub25lJyxcclxuICAgICAgICAgICAgICBkdXJhdGlvbjoyMDAwXHJcbiAgICAgICAgICAgIH0pXHJcbiAgICAgICAgICAgIHJlamVjdChyZXMpXHJcbiAgICAgICAgICB9XHJcbiAgICAgICAgfSlcclxuICAgIH1cclxuICAgIGdldGxvY2F0aW9uKClcclxuICB9KVxyXG59XHJcbkNvbXBvbmVudCh7XHJcbiAgcHJvcGVydGllczp7XHJcbiAgICBxcW1hcHNkazpudWxsXHJcbiAgfSxcclxuICBkYXRhOntcclxuICB9LFxyXG4gIG1ldGhvZHM6IHtcclxuICAgIFxyXG4gIH0sXHJcbiAgXHJcbiAgYXR0YWNoZWQoKSB7XHJcbiAgICBnZXRMY2F0aW9ucyhbJ+aihemZh+mVhycsJ+aihemZh+S6jOadkSddKS50aGVuKChyZXM6YW55KT0+e1xyXG4gICAgICBjb25zb2xlLmxvZyhyZXMpXHJcbiAgICB9KVxyXG4gIH0sXHJcbiAgZGV0YWNoZWQoKSB7XHJcbiAgICBcclxuICB9LFxyXG59KSJdfQ==

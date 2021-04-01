@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "l-textarea":"/components/textarea",
+    "l-image-picker":"/components/image-picker",
+    "l-input":"/components/input",
+    "l-button":"/components/button"
+  }
+}

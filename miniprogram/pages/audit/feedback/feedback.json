@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText":"巡查评测",
+  "usingComponents": {
+    "l-icon":"/components/icon",
+    "l-button":"/components/button",
+    "l-search":"/components/search-bar"
+  }
+}

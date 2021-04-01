@@ -1,0 +1,50 @@
+@import "../../font/init.less";
+page {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.main {
+  height:100%;
+  background: #fff;
+  .text {
+    font-size: 35rpx;
+    margin-top: 15rpx;
+  }
+  .content {
+    background: #fff;
+    padding-left: 39rpx;
+    padding-top: 40rpx;
+    padding-right: 39rpx;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .single {
+      width: 326rpx;
+      height: 310rpx;
+      margin-bottom: 20rpx;
+      position: relative;
+      image {
+        width: 100%;
+        height: 100%;
+      }
+      text {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        z-index: 1;
+        bottom: 40rpx;
+        left: 0;
+        font-size: 36rpx;
+        font-family: PingFang SC;
+        font-weight: 500;
+        line-height: 44rpx;
+        color: #3E455A;
+      }
+    }
+    .text {
+      font-size: 35rpx;
+      margin-top: 15rpx;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+<!--miniprogram/pages/audit/feedback/feedback.wxml-->
+<view class="main">
+    <scroll-view class="content"  scroll-y="true" bindscrolltolower="scroll">
+      <view class="tab">
+        <view class="single {{current==='all'?'selected':''}}" data-type="all" bindtap="tap">
+          <text>全部</text>
+          <view class="line"></view>
+        </view>
+        <view class="single {{current==='done'?'selected':''}}" data-type="done" bindtap="tap">
+          <text>已处理</text>
+          <view class="line"></view>
+        </view>
+        <view class="single {{current==='notyet'?'selected':''}}" data-type="notyet" bindtap="tap">
+          <text>未处理</text>
+          <view class="line"></view>
+        </view>
+        <view class="single {{current==='pending'?'selected':''}}" data-type="pending" bindtap="tap">
+          <text>处理中</text>
+          <view class="line"></view>
+        </view>
+      </view>
+      <view class="search">
+        <l-search bind:linclear="clear" bind:linchange="search" value="{{keyword}}" shape="circle" bg-color="#F5F6FA" show-cancel="{{false}}"></l-search>
+      </view>
+      <view class="list">
+        <!-- <view class="main_title">
+          梅陇二村141～185号
+        </view> -->
+        <view class="single" wx:for="{{list}}" wx:key="index">
+          <view class="belong">
+            {{item.subdistrict_name||item.committee_name}}
+          </view>
+          <view class="info">
+            <view class="user" style="background:transparent;">
+              <!-- <l-icon name="wode" l-class='iconfont gray' size="32"></l-icon>
+              <text>{{item.real_name}}</text> -->
+            </view>
+            <view class="time">
+              {{item.create_time}}
+            </view>
+          </view>
+          <view class="detail">
+            <view class="title">
+              {{item.infozc_name}}
+            </view>
+            <view class="imgs">
+              <view bindtap="previewImg" data-urls="{{item.image_url}}" data-index="{{i}}" class="img" wx:for="{{item.image_url}}" wx:for-item="url" wx:for-index='i' wx:key="i">
+                <image src="{{url}}" mode="aspectFill"></image>
+              </view>
+            </view>
+          </view>
+          <div class="btn">
+            <l-button l-class="little_button" wx:if="{{item.status!=0&&item.audit_status=='1'}}">已结案</l-button>
+            <l-button l-class="little_button" wx:if="{{item.status!=0&&item.audit_status=='0'}}">待审核</l-button>
+            <l-button l-class="little_button" wx:if="{{item.status!=0&&item.audit_status=='-1'}}">审核被拒</l-button>
+          </div>
+          <view class="detail">
+            <view class="title" wx:if="{{item.feedback}}">
+              {{item.feedback}}
+            </view>
+            <view class="imgs" wx:if="{{item.feedback_image_url.length>0}}">
+              <view bindtap="previewImg" data-urls="{{item.feedback_image_url}}" data-index="{{i}}" class="img" wx:for="{{item.feedback_image_url}}" wx:for-item="url" wx:for-index='i' wx:key="i">
+                <image src="{{url}}" mode="aspectFill"></image>
+              </view>
+            </view>
+          </view>
+          
+          <view class="btn" wx:if="{{user.type!=2&&user.type!=3}}">
+            <l-button l-class="big_button" wx:if="{{item.status != '1'}}" bind:lintap="goUpfeedback" data-defuct_id
+="{{item.id}}" data-category_id="{{item.category_id}}">整改</l-button>
+          </view>
+        </view>
+      </view>
+    </scroll-view>   
+</view>

@@ -1,0 +1,26 @@
+<!--pages/audit/component/summary/index.wxml-->
+<view class="main">
+  <view class="header">
+    <view class="title">
+      <view class="main_title">各{{typeString}}问题排名汇总</view>
+      <view class="sub_title">{{sub}}</view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="species">
+      <view class="specie" wx:for="{{species}}" wx:key="index">
+        <text>{{item}}</text>
+      </view>
+    </view>
+
+    <scroll-view class="list" scroll-y="true" bindscrolltolower="scrollevent">
+        <view class="row" wx:for="{{list}}" wx:for-index="idx" wx:key="idx" wx:for-item="row">
+          <block wx:for="{{speciesKeys}}" wx:key="i" wx:for-item="specie">
+            <view class="col {{key==='total_persent'?'important':''}}" wx:for="{{row}}" wx:for-index="key" wx:key="key"
+              wx:for-item="value" wx:if="{{specie === key}}">{{key==='total_persent'?value*100+'%':value}}</view>
+          </block>
+        </view>
+    </scroll-view>
+
+  </view>
+</view>

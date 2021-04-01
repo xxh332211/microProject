@@ -1,0 +1,142 @@
+{
+  "id": "2219292",
+  "name": "小程序 梅隆垃圾",
+  "font_family": "iconfont",
+  "css_prefix_text": "l-icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "11219384",
+      "name": "user",
+      "font_class": "user1",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "11686861",
+      "name": "password",
+      "font_class": "lockxxh",
+      "unicode": "e682",
+      "unicode_decimal": 59010
+    },
+    {
+      "icon_id": "6282777",
+      "name": "通知",
+      "font_class": "tongzhi",
+      "unicode": "e6bb",
+      "unicode_decimal": 59067
+    },
+    {
+      "icon_id": "1320050",
+      "name": "页面配置",
+      "font_class": "yemianpeizhi",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "1667263",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "6346000",
+      "name": "star",
+      "font_class": "star",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "8879765",
+      "name": "pie chart",
+      "font_class": "piechart",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "6851550",
+      "name": "图表",
+      "font_class": "tubiao",
+      "unicode": "e6d8",
+      "unicode_decimal": 59096
+    },
+    {
+      "icon_id": "9512485",
+      "name": "向右",
+      "font_class": "toRight-fill",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "10109002",
+      "name": "书写",
+      "font_class": "shuxie",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "18004507",
+      "name": "瞄准",
+      "font_class": "aim",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "1400868",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "4441291",
+      "name": "社区",
+      "font_class": "shequ",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "10047152",
+      "name": "街道",
+      "font_class": "jiedao",
+      "unicode": "e6fd",
+      "unicode_decimal": 59133
+    },
+    {
+      "icon_id": "14403561",
+      "name": "单位",
+      "font_class": "danwei",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "6054327",
+      "name": "小区",
+      "font_class": "xiaoqu",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "2217790",
+      "name": "包含小区svg",
+      "font_class": "baohanxiaoqusvg",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "3216122",
+      "name": "地标",
+      "font_class": "icon--",
+      "unicode": "e732",
+      "unicode_decimal": 59186
+    },
+    {
+      "icon_id": "17750065",
+      "name": "区域",
+      "font_class": "quyu",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    }
+  ]
+}

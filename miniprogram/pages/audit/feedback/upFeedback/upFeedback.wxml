@@ -1,0 +1,44 @@
+<!--miniprogram/pages/audit/feedback/upFeedback/upFeedback.wxml-->
+<view class="red">
+  <view class="main">
+    <view class="main_title">
+      {{data.subdistrict_name||data.committee_name}}
+    </view>
+    <view class="form">
+      <view class="info">
+        <view class="user" style="background:transparent;">
+          <!-- <l-icon name="wode" l-class='iconfont gray' size="32"></l-icon> -->
+          <!-- <text>{{data.real_name}}</text> -->
+        </view>
+        <view class="time">
+          {{data.create_time}}
+        </view>
+      </view>
+      <view class="detail">
+        <view class="title">
+          {{data.infozc_name}}
+        </view>
+        <view class="imgs">
+          <view bindtap="previewImg" data-urls="{{data.image_url}}" data-index="{{i}}" class="img"
+            wx:for="{{data.image_url}}" wx:for-item="url" wx:for-index='i' wx:key="i">
+            <image src="{{url}}" mode="aspectFill"></image>
+          </view>
+        </view>
+      </view>
+      <view class="up">
+        <view>
+          <l-textarea bind:lininput="textInput" value="{{feedback}}" indicator="{{true}}" maxlength="140"
+            placeholder="整改描述.." l-class="text" />
+        </view>
+        <view>
+          <l-image-picker urls="{{image_url}}" l-class="picker_c" bind:linchange="onImgChangeTap"
+            bind:linremove="onRemoveImgTap" size-type="compressed" l-item-class="picker" count="9" />
+        </view>
+      </view>
+      <view class="btn">
+        <l-button l-class="big_button {{(image_url.length>0)?'':'disabled'}}"
+          disabled="{{!(image_url.length>0)}}" bind:lintap="upload">提交整改</l-button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+<!--pages/audit/component/analysis/index.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="title">
+      <view class="main_title">达标率(%)</view>
+      <view class="sub_title">{{date}} 截止</view>
+    </view>
+  </view>
+  <view class="content" wx:if="{{show}}">
+    <view class="chart" >
+      <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+    </view>
+  </view>
+</view>
+
+<view class="container">
+  <view class="header">
+    <view class="title">
+      <view class="main_title">问题汇总</view>
+      <view class="sub_title">{{date}} 截止</view>
+    </view>
+  </view>
+  <view class="content">
+    <div class="bar">
+      <div class="single" wx:for="{{list}}" wx:key="index">
+        <div class="left">
+          {{item.name}}
+        </div>
+        <div class="minddle">
+          <l-progress percent="20" active-color="#FF5175"></l-progress>
+        </div>
+        <div class="right">
+          {{item.num}}个 
+        </div>
+      </div>
+    </div>
+  </view>
+</view>

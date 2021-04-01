@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "watch": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "module": "CommonJS",
+    // "target": "ES5",
+    "target": "es2015",
+    "allowJs": false,
+    "experimentalDecorators": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "alwaysStrict": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "removeComments": true,
+    "pretty": true,
+    "types": ["miniprogram-api-typings"],
+    "strictPropertyInitialization": true,
+    "lib": ["es5","dom","ES2015.Promise"],
+    "typeRoots": [
+      "./typings"
+    ]
+  },
+  "include": [
+    "./**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

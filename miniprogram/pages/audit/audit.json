@@ -1,0 +1,12 @@
+{
+  "navigationBarBackgroundColor":"#FF625D",
+  "navigationBarTitleText":"巡查评测",
+  "usingComponents": {
+    "l-icon":"/components/icon",
+    "community":"./communityDetail",
+    "village":"./village",
+    "unit":"./unitDetail",
+    "street":"./streetDetail",
+    "tabbar":"/components/xxh-tabbar2"
+  }
+}

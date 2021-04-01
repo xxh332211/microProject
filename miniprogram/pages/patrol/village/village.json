@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "l-search-bar":"/components/search-bar",
+    "l-list":"/components/list",
+    "l-collapse":"/components/collapse",
+    "l-collapse-item":"/components/collapse-item",
+    "l-button":"/components/button",
+    "l-icon":"/components/icon"
+  }
+}

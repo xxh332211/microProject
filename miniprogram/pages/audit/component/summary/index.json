@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-segment":"/components/segment",
+    "l-segment-item":"/components/segment-item"
+  }
+}

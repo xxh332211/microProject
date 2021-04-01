@@ -1,0 +1,160 @@
+<!--miniprogram/pages/classification/classification.wxml-->
+<view class="main">
+  <view class="banner">
+    <view class="maintitle">
+      <view class="location">
+        <l-icon name="icon--" l-class='iconfont white_f' size="60"/>
+        <text class="title">梅陇镇</text>
+      </view>
+      <view class="lasttime">
+        <text>截止时间: 2020-11-20</text>
+      </view>
+    </view>
+    <image src="../../static/banner.png"></image>
+  </view>
+  <view class="info">
+    <view class="top">
+      <view class="percent">
+        100%
+      </view>
+      <view class="main_title">
+        资源化利用率
+      </view>
+      <view class="sub_title">
+        干、湿垃圾可回收物再利用
+      </view>
+    </view>
+    <view class="main_info">
+      <view class="middle">
+        <view class="weight">
+          <text class="bold_number">9</text>
+          <text class="subword">吨</text>
+        </view>
+        <view class="title">
+          <text class="title_bold">干垃圾总量</text>
+        </view>
+        <view class="percent">
+          <text class="percent_bold">90%</text>
+          <l-progress percent="90" active-color="#FF5175"></l-progress>
+        </view>
+        <view class="subtitle">
+          <text class="subword">街道控制完成率</text>
+        </view>
+      </view>
+      <view class="middle">
+        <view class="weight">
+          <text class="bold_number">9</text>
+          <text class="subword">吨</text>
+        </view>
+        <view class="title">
+          <text class="title_bold">湿垃圾总量</text>
+        </view>
+        <view class="percent">
+          <text class="percent_bold">90%</text>
+          <l-progress percent="90" active-color="#FF5175"></l-progress>
+        </view>
+        <view class="subtitle">
+          <text class="subword">街道指标完成率</text>
+        </view>
+      </view>
+      <view class="big">
+        <view class="big_header">
+          <view class="left">
+            <view>
+              <text class="bold_number">170.1</text>
+              <text class="subword">吨</text>
+            </view>
+            <view>
+              <text class="title_bold">可回收物总量</text>
+            </view>
+          </view>
+          <view class="line"></view>
+          <view class="right">
+            <view>
+              <text class="percent_bold">113.4%</text>
+            </view>
+            <view>
+              <l-progress percent="90" active-color="#FF5175"></l-progress>
+            </view>
+            <text class="subword">街道指标量完成率</text>
+          </view>
+        </view>
+        <view class="big_content">
+          <view class="single">
+            <view class="subject">金属</view>
+            <view class="percent">
+              <l-progress percent="90" active-color="#FF5175"></l-progress>
+            </view>
+            <view class="number">1596KG</view>
+          </view>
+          <view class="single">
+            <view class="subject">纺衣服</view>
+            <view class="percent">
+              <l-progress percent="90" active-color="#FF5175"></l-progress>
+            </view>
+            <view class="number">1596KG</view>
+          </view>
+          <view class="single">
+            <view class="subject">玻璃</view>
+            <view class="percent">
+              <l-progress percent="90" active-color="#FF5175"></l-progress>
+            </view>
+            <view class="number">1596KG</view>
+          </view>
+          <view class="single">
+            <view class="subject">塑料</view>
+            <view class="percent">
+              <l-progress percent="90" active-color="#FF5175"></l-progress>
+            </view>
+            <view class="number">1596KG</view>
+          </view>
+          <view class="single">
+            <view class="subject">废纸</view>
+            <view class="percent">
+              <l-progress percent="90" active-color="#FF5175"></l-progress>
+            </view>
+            <view class="number">1596KG</view>
+          </view>
+        </view>
+      </view>
+      <view class="small">
+        <view>
+          <text class="bold_number">175</text>
+          <text class="subword">KG</text>
+        </view>
+        <view>
+          <text class="title_bold">有害垃圾量</text>
+        </view>
+      </view>
+      <view class="small">
+        <view>
+          <text class="bold_number">2319</text>
+          <text class="subword">KG</text>
+        </view>
+        <view>
+          <text class="title_bold">建筑垃圾量</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="tab">
+      <view class="single {{current==='community'?'selected':''}}" data-type="community" bindtap="tap">
+        <text>居住地</text>
+        <view class="line"></view>
+      </view>
+      <view class="single {{current==='unit'?'selected':''}}" data-type="unit" bindtap="tap">
+        <text>单位</text>
+        <view class="line"></view>
+      </view>
+      <view class="single {{current==='street'?'selected':''}}" data-type="street" bindtap="tap">
+        <text>沿街街道</text>
+        <view class="line"></view>
+      </view>
+    </view>
+    <view class="detail">
+      <summary></summary>
+    </view>
+  </view>
+</view>
+<tabbar current="classification"></tabbar>

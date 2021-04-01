@@ -1,0 +1,42 @@
+<!--miniprogram/pages/patrol/community/scroring/scroring.wxml-->
+<view class="main">
+  <view class="detail score" wx:for="{{scoring.detail}}" wx:key="index">
+    <view class="title">
+      <text>{{item.description}}</text>
+    </view>
+    <view class="detail">
+      <view class="title">
+        <text>现场情况</text>
+      </view>
+      <l-textarea bind:lininput="textInput" value="{{scoring.detail[index].desc}}" indicator="{{true}}" maxlength="140" placeholder="现场情况补充描述.." data-index="{{index}}" />
+    </view>
+    <view class="detail">
+      <view class="title">
+        <text>场景拍摄</text>
+      </view>
+      <l-image-picker bind:linchange="onImgChangeTap" bind:linremove="onRemoveImgTap" count="9" urls="{{scoring.detail[index].image_url}}" size-type="compressed" data-index="{{index}}"/>
+    </view>
+    <view class="forms">
+      <view class="single" wx:for="{{item.detail}}" wx:for-item="ele" wx:key="i" wx:for-index="i">
+        <view class="line">
+          <view class="detail">
+            <text>{{ele.description}}</text>
+          </view>
+          <view>-</view>
+          <view class="input_number">
+            <view>
+              <input class="weui-input" value="{{ele.deduct_points/1}}" type="digit" placeholder="0.00" bindinput="bindKeyInput" data-index="{{index}}" data-i="{{i}}" data-point="{{ele.point}}"/>
+            </view>
+          </view>
+        </view>
+        <!-- <view class="btn">
+          <l-button width="200">
+            存疑
+          </l-button>
+        </view> -->
+      </view>
+    </view>
+  </view>
+  <l-button width="650" bind:lintap="save" type="success">保存</l-button>
+</view>
+
