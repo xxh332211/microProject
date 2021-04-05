@@ -7,10 +7,14 @@ Page({
     
   },
   onLoad() {
+    // wx.redirectTo({url:'/pages/community/community'});
+    // wx.redirectTo({url:'/pages/community/communityDetail/communityDetail'});
+    // wx.redirectTo({url:'/pages/community/dustcart/dustcart'});
+    // wx.redirectTo({url:'/pages/community/wingRoom/wingRoom'});
     wx.showLoading({
       title:'加载中'
     });
-    console.log(app.globalData)
+    // console.log(app.globalData,'111')
     
   },
   onShow(){
@@ -22,12 +26,13 @@ Page({
         }else if(user.type == 5){
           wx.redirectTo({url:'/pages/adminUser/adminUser'});
         }else{
+          console.log(2222);
           wx.redirectTo({url:'/pages/audit/audit'});
         }
       }else{
         wx.redirectTo({url:'/pages/login/login'})
       }
-    },1000)
+    },0)
   },
   onHide(){
     wx.hideLoading()

@@ -1,0 +1,152 @@
+.main {
+  display: block;
+  width: 750rpx;
+  height: auto;
+  background: #FFFFFF;
+  border-radius: 30rpx 30rpx 0 0;
+  opacity: 10000;
+}
+.main .tit_box {
+  width: 670rpx;
+  height: 936rpx;
+  background: #F5F6FA;
+  border-radius: 30px;
+  margin: 40rpx auto;
+}
+.main .tit_box .tit {
+  font-size: 36rpx;
+  font-weight: 500;
+  line-height: 44rpx;
+  color: #3E455A;
+  margin: 0 0 40rpx 40rpx;
+  padding-top: 32rpx;
+}
+.main .tit_box .page-section {
+  margin-left: 40rpx;
+}
+.main .tit_box .page-section .img {
+  width: 590rpx;
+  height: 300rpx;
+}
+.main .tit_box .num_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40rpx;
+  margin: 40rpx 0;
+}
+.main .tit_box .num_box .li {
+  text-align: center;
+}
+.main .tit_box .num_box .li .num {
+  height: 58rpx;
+  font-size: 48rpx;
+  font-family: Impact;
+  font-weight: 400;
+  line-height: 44rpx;
+  color: #3E455A;
+  text-align: left;
+}
+.main .tit_box .num_box .li .num .text {
+  width: 24rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 44rpx;
+  color: #858FAD;
+}
+.main .tit_box .num_box .li .dw {
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 44rpx;
+  color: #858FAD;
+  text-align: center;
+}
+.main .tit_box .list {
+  margin-left: 40rpx;
+}
+.main .tit_box .list .li {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 44rpx;
+  color: #3E455A;
+  margin-bottom: 20rpx;
+}
+.main .fzr_box {
+  width: 670rpx;
+  background: #F5F6FA;
+  border-radius: 30px;
+  margin: 40rpx auto;
+}
+.main .fzr_box .tit {
+  font-size: 36rpx;
+  font-weight: 500;
+  line-height: 44rpx;
+  color: #3E455A;
+  margin: 0 0 40rpx 40rpx;
+  padding-top: 32rpx;
+}
+.main .fzr_box .form_ui {
+  padding: 0 40rpx 40rpx 40rpx;
+}
+.main .fzr_box .form_ui .li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 44rpx;
+  color: #3E455A;
+  margin-bottom: 20rpx;
+  padding: 0 40rpx;
+}
+.main .fzr_box .form_ui .li:nth-of-type(even) {
+  width: 508rpx;
+  height: 58rpx;
+  background: #E7EAF4;
+  border-radius: 30rpx;
+}
+.main .fzr_box .form_ui text {
+  width: 40%;
+  text-align: center;
+}
+.main .fzr_box .form_ui text:first-child {
+  text-align: left;
+}
+.main .fzr_box .form_ui text:last-child {
+  text-align: right;
+}
+.main .lj_box text {
+  width: 20%;
+}
+.main .car_box {
+  position: relative;
+}
+.main .car_box .btn {
+  width: 156rpx;
+  height: 58rpx;
+  background: #FFFFFF;
+  border: 2rpx solid #DDE1ED;
+  border-radius: 30rpx;
+  text-align: center;
+  position: absolute;
+  top: 32rpx;
+  right: 40rpx;
+}
+.main .car_box .btn .text {
+  width: 100rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 60rpx;
+  color: #858FAD;
+  padding-bottom: 4rpx;
+}
+.main .car_box text {
+  width: 45%;
+}

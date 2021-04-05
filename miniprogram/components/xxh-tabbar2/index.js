@@ -10,7 +10,7 @@ Component({
       value:[
         {name: '巡查评测',icon:'yemianpeizhi',url:'/pages/audit/audit',key:'audit'},
         {name: '分类时效',icon:'piechart',url:'/pages/classification/classification',key:'classification'},
-        {name: '未知',icon:'star',url:'',key:''},
+        {name: '社区管理',icon:'star',url:'/pages/community/community',key:'community'},
         {name: '我的',icon:'wode',url:'/pages/adminUser/adminUser',key:'adminUser'}
       ]
     },
@@ -19,13 +19,13 @@ Component({
       value:[
         {name: '巡查评测',icon:'yemianpeizhi',url:'/pages/audit/audit',key:'audit'},
         {name: '分类时效',icon:'piechart',url:'/pages/classification/classification',key:'classification'},
-        {name: '未知',icon:'star',url:'',key:''},
+        {name: '社区管理',icon:'star',url:'/pages/community/community',key:'community'},
       ]
     },
     listProperty: {
       type:Array,
       value:[
-        {name: '未知',icon:'star',url:''},
+        {name: '社区管理',icon:'star',url:'/pages/community/community',key:'community'},
         {name: '我的',icon:'wode',url:'/pages/adminUser/adminUser',key:'adminUser'}
       ]
     }

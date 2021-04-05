@@ -1,0 +1,17 @@
+<!--miniprogram/pages/community/community.wxml-->
+<view class="list_box">
+  <!-- <view class="tit">管理社区</view> -->
+  <view class="list">
+    <!-- <view class="li" bindtap="go" data-url="/pages/community/communityDetail/communityDetail">
+      <image class="pic" src="../../static/avatar.png"></image>
+      <view class="p">梅陇一村1～9号</view>
+    </view> -->
+    <view class="li"  wx:for="{{ mainData }}" wx:key="name" bindtap="go" data-url="/pages/community/communityDetail/communityDetail?subdistrict_id={{item.subdistrict_id}}">
+      <image wx:if="{{!item.thumb_img}}" class="pic" src="../../static/avatar.png"></image>
+      <image wx:if="{{item.thumb_img}}" class="pic" src="{{item.thumb_img}}"/>
+      <view class="p">{{ item.name }}</view>
+    </view>
+  </view>
+</view>
+
+<tabbar current="community"></tabbar>

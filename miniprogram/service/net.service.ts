@@ -62,6 +62,7 @@ interface patrolData {
 export type mainType = "community" | "street" | "unit" | "village" | Number;
 
 class API {
+  // private HOST = 'https://testapi.021xzy.com/'; // 测试环境2
   // private HOST = 'https://ticket-api.jia-expo.com'; // 测试环境
   private HOST = 'https://api.021xzy.com' // 正式环境
   private http(URL: string, type: "OPTIONS" | "GET" | "HEAD" | "POST" | "PUT" | "DELETE" | "TRACE" | "CONNECT" | undefined, option: { data?: any, header?: any }, authority?: 'authority') {
@@ -394,6 +395,29 @@ class API {
     wx.setStorageSync('recordData', data)
   }
 
+    /**
+   * 获取社区管理列表
+   */
+  public getCommunityList(upData: {
+    type: mainType | number,
+    page: number | string,
+    pageSize?: number
+  }) {
+    let typeNumber: number | string = 0
+    typeNumber = this.typeHandle(upData.type)
+    upData.type = typeNumber
+    upData.page = upData.page || 1
+    upData.pageSize = upData.pageSize || 10
+    return this.http('/information/api/areaList', "GET", { data: upData }, 'authority')
+  }
+  /**
+   * 获取社区管理详情
+   */
+  public getCommunityDetail(upData: {
+    subdistrict_id?: number | string,
+  }) {
+    return this.http('/backend/xcx/SubDistrictDetail', "GET", { data: upData }, 'authority')
+  }
 
 
 

@@ -1,0 +1,48 @@
+/* miniprogram/pages/community/community.wxss */
+@import '/font/init.wxss';
+.list_box {
+  width: 670rpx;
+  height: 100%;
+  border-radius: 30rpx;
+  background-color: #F5F6FA;
+  margin: 20rpx 40rpx 118rpx 40rpx;
+}
+/* .list_box .tit {
+  width: 150rpx;
+  height: 50rpx;
+  font-size: 36rpx;
+  color: #3E455A;
+  line-height: 44rpx;
+  margin: 0 0 32rpx 40rpx;
+  padding-top: 32rpx;
+} */
+.list_box .list {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;   
+  flex-wrap: wrap;
+  padding-top: 32rpx;
+}
+.list_box .list .li:nth-child(odd) {
+  margin: 0 18rpx 0 40rpx;
+}
+.list_box .list .li .pic {
+  width: 286rpx;
+  height: 184rpx;
+  background: rgba(0, 0, 0, 0);
+  opacity: 1;
+  border-radius: 20rpx;
+  background: red;
+}
+.list_box .list .li .p {
+  width: 286rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #3E455A;
+  font-size: 28rpx;
+  line-height: 44rpx;
+  padding: 14rpx 0 32rpx 0;
+}

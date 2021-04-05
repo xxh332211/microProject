@@ -1,0 +1,166 @@
+<!--miniprogram/pages/community/communityDetail/communityDetail.wxml-->
+<view class="main">
+  <view class="tit_box">
+    <view class="tit" wx:if="{{dataObj.subdistrict_name}}">{{dataObj.subdistrict_name}}</view>
+    <view class="page-section page-section-spacing swiper" wx:if="{{dataObj.thumb_img&&dataObj.thumb_img.length>0}}">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{dataObj.thumb_img}}" wx:key="*this">
+          <swiper-item>
+            <image class="img" src="{{item}}"></image>
+            <!-- <view class="swiper-item">
+              <image class="img" src="{{item}}"></image>
+            </view> -->
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <view class="num_box">
+      <view class="li">
+        <view class="num">{{dataObj.household_num?dataObj.household_num:0}}
+          <text class="text">户</text>
+        </view>
+        <view class="dw">户数</view>
+      </view>
+      <view class="li">
+        <view class="num">{{dataObj.building_num?dataObj.building_num:0}}
+          <text class="text">个</text></view>
+        <view class="dw">楼栋数</view>
+      </view>
+      <view class="li">
+        <view class="num">{{dataObj.volunteer_total?dataObj.volunteer_total:0}}
+          <text class="text">人</text></view>
+        <view class="dw">志愿队伍</view>
+      </view>
+      <view class="li">
+        <view class="num">{{dataObj.cleaner_total?dataObj.cleaner_total:0}}
+          <text class="text">人</text></view>
+        <view class="dw">保洁人数</view>
+      </view>
+    </view>
+
+    <view class="list">
+      <view class="li">
+        房屋类型：<text class="txt">{{dataObj.house_type_name?dataObj.house_type_name:''}}</text>
+      </view>
+      <view class="li">
+        建成时间：<text class="txt">{{dataObj.building_time?dataObj.building_time:''}}</text>
+      </view>
+      <view class="li">
+        所属居委：<text class="txt">{{dataObj.committee_name?dataObj.committee_name:''}}</text>
+      </view>
+      <view class="li">
+        物业公司：<text class="txt">{{dataObj.property_name?dataObj.property_name:''}}</text>
+      </view>
+      <view class="li">
+        小区地址：<text class="txt" wx:if="{{dataObj.address}}">{{dataObj.address}}</text>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="fzr_box">
+    <view class="tit">辖区负责人</view>
+    <view class="form_ui">
+      <view class="form-tit li">
+        <text>职位</text>
+        <text>姓名</text>
+        <text>电话</text>
+      </view>
+      <view class="content li" wx:for="{{dataObj.userList}}" wx:key="index">
+        <text>{{item.position?item.position:''}}</text>
+        <text>{{item.name?item.name:''}}</text>
+        <text>{{item.mobile?item.mobile:''}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="lj_box fzr_box">
+    <view class="tit">生活垃圾产出情况</view>
+    <view class="form_ui">
+      <view class="form-tit li">
+        <text>干</text>
+        <text>湿</text>
+        <text>有害</text>
+        <text>可回收</text>
+        <text>建筑</text>
+      </view>
+      <view class="content li">
+        <text>{{dataObj.dry_garbage_container?dataObj.dry_garbage_container:0}}桶</text>
+        <text>{{dataObj.wet_refuse_container?dataObj.wet_refuse_container:0}}桶</text>
+        <text>{{dataObj.hazardous_waste_container?dataObj.hazardous_waste_container:0}}桶</text>
+        <text>{{dataObj.recyclable_garbage_container?dataObj.recyclable_garbage_container:0}}kg</text>
+        <text>{{dataObj.building_waste_container?dataObj.building_waste_container:0}}车</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="car_box fzr_box">
+    <view class="tit">分类驳运机具情况</view>
+    <view class="btn">
+      <text class="text" bindtap="go" data-url="/pages/community/dustcart/dustcart">全部数据</text>
+    </view>
+    <view class="form_ui">
+      <view class="form-tit li">
+        <text>品牌</text>
+        <text>用途</text>
+      </view>
+      <view class="content li" wx:for="{{dataObj.car}}" wx:key="index">
+        <text>{{item.brand?item.brand:''}}</text>
+        <text>{{item.use_type?item.use_type:''}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="xf_box fzr_box car_box">
+    <view class="tit">生活垃圾箱房情况</view>
+    <view class="btn">
+      <text class="text" bindtap="goRoom" data-url="/pages/community/wingRoom/wingRoom?id=1">全部数据</text>
+    </view>
+    <view class="form_ui">
+      <view class="form-tit li">
+        <text>箱房位置</text>
+        <text>性质</text>
+        <text>配套</text>
+        <text>投口</text>
+        <!-- <text class="img_text"></text> -->
+      </view>
+      <view class="content li" wx:for="{{dataObj.wing_room}}" wx:key="index">
+        <text>{{item.address?item.address:''}}</text>
+        <text>{{item.wing_type_name?item.wing_type_name:''}}</text>
+        <text>{{item.supportingFacilities?item.supportingFacilities:''}}</text>
+        <text>{{item.input?item.input:''}}</text>
+        <!-- <view class="img_text">
+          <image class="img" src="../../../static/right.png"></image>
+        </view> -->
+      </view>
+    </view>
+  </view>
+
+  <view class="xf_box fzr_box car_box">
+    <view class="tit">定时定点投放点位</view>
+    <view class="btn">
+      <text class="text" bindtap="goFixed" data-url="/pages/community/wingRoom/wingRoom?id=2">全部数据</text>
+    </view>
+    <view class="form_ui">
+      <view class="form-tit li">
+        <text>箱房位置</text>
+        <text>性质</text>
+        <text>配套</text>
+        <text>投口</text>
+        <!-- <text class="img_text"></text> -->
+      </view>
+      <view class="content li" wx:for="{{dataObj.fixed_time}}" wx:key="index">
+        <text>{{item.address?item.address:''}}</text>
+        <text>{{item.wing_type_name?item.wing_type_name:''}}</text>
+        <text>{{item.supportingFacilities?item.supportingFacilities:''}}</text>
+        <text>{{item.input?item.input:''}}</text>
+        <!-- <view class="img_text">
+          <image class="img" src="../../../static/right.png"></image>
+        </view> -->
+      </view>
+    </view>
+  </view>
+</view>
+

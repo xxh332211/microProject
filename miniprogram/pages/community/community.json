@@ -1,0 +1,13 @@
+{
+  "navigationBarBackgroundColor":"#FF625D",
+  "navigationBarTitleText":"社区管理",
+  "onReachBottomDistance":300,
+  "usingComponents": {
+    "l-icon":"/components/icon",
+    "community":"../audit/communityDetail",
+    "village":"../audit/village",
+    "unit":"../audit/unitDetail",
+    "street":"../audit/streetDetail",
+    "tabbar":"/components/xxh-tabbar2"
+  }
+}
