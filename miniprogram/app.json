@@ -16,7 +16,11 @@
     "pages/patrol/patrol",
     "pages/patrol/unit/scroring/scroring",
     "pages/patrol/village/village",
-    "pages/bigscreen/activity/activity"
+    "pages/bigscreen/activity/activity",
+    "pages/community/community",
+    "pages/community/communityDetail/communityDetail",
+    "pages/community/dustcart/dustcart",
+    "pages/community/wingRoom/wingRoom"
   ],
   "window": {
     "backgroundTextStyle": "light",

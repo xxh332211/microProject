@@ -1,0 +1,17 @@
+<!--miniprogram/pages/community/dustcart/dustcart.wxml-->
+<view class="main">
+  <!-- <view class="tit_num" wx:if="dataArr.length>0">共计{{dataArr.length}}辆</view> -->
+  <view class="car_ul" wx:for="{{dataArr}}" wx:key="index">
+    <view class="car_li" wx:if="item.image_url&&item.image_url.length>0">
+      <block wx:for="{{item.image_url}}" wx:for-item="imgUrl" wx:key="index">
+        <image class="img" wx:if="imgUrl" src="{{imgUrl}}"></image>
+      </block>
+    </view>
+    <view class="car_li">
+      <view class="li">品牌：{{item.brand?item.brand:''}}</view>
+    </view>
+    <view class="car_li">
+      <view class="li">用途：{{item.use_type?item.use_type:''}}</view>
+    </view>
+  </view>
+</view>
