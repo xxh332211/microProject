@@ -113,7 +113,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage(opts:any): WechatMiniprogram.Page.ICustomShareContent {
-    console.log(opts.target)
     return {}
   }
 })
