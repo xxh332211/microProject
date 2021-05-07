@@ -7,18 +7,28 @@ Page({
    */
   data: {
     current: <'community'|'unit'|'street'>'unit',
+    mainData:<any>{},
   },
   tap (e:any) {
     this.setData({
       current: e.currentTarget.dataset.type
     })
-    // this.getMainData();
+    this.getMainData();
+  },
+  getMainData() {
+    api.getClassificationData().then((res:any)=>{
+      console.log('数据', res);
+      this.setData({
+        mainData: res.data.result
+      })
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    wx.setNavigationBarColor({backgroundColor:'#FF625D',frontColor:'#ffffff'})
+    wx.setNavigationBarColor({backgroundColor:'#FF625D',frontColor:'#ffffff'});
+    this.getMainData();
   },
 
   /**

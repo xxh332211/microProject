@@ -17,11 +17,28 @@ Page({
       current: e.currentTarget.dataset.type
     })
     this.getMainData();
+    console.log(this.data.current);
+    
   },
   goFeedback () {
     api.setFeedbackType(this.data.current);
     setTimeout(()=>{
       wx.navigateTo({url:'/pages/audit/feedback/feedback'});
+    },100)
+  },
+  // 巡查报告
+  goReport() {
+    api.setFeedbackType(this.data.current);
+    let that = this;
+    setTimeout(()=>{
+      wx.navigateTo({
+        url:'/pages/audit/report/report',
+        success: function(res) {
+          // 通过eventChannel向被打开页面传送数据
+          let data = that.data.current?that.data.current:'community';
+          res.eventChannel.emit("currentInfo", data);
+        }
+      });
     },100)
   },
   getMainData() {

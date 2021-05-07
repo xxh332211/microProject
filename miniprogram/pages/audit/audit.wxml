@@ -58,7 +58,7 @@
           </view>
         </view>        
       </view>
-      <view class="score" bindtap="goFeedback">
+      <view class="score" bindtap="goReport">
         <view class="left">
           <view class="title">
             总分

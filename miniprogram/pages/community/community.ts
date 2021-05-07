@@ -17,7 +17,7 @@ Page({
       current: e.currentTarget.dataset.type
     })
     this.getMainData();
-    console.log(1111);
+    console.log('tap');
   },
   go(e:any){
     // console.log(e.currentTarget.dataset.url)
@@ -25,7 +25,7 @@ Page({
   },
   getMainData() {
     let data = {
-      type:<mainType> 'unit',
+      type:<mainType> 'community',
       page: this.data.pagenum,
       pageSize: 10
     }
@@ -43,16 +43,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.setData({
-      date:api.getDate()
-    })
-    // this.userInit()
+    console.log("onshow");
+  },
+    /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad() {
     this.getMainData()
   },
   onReachBottom: function () { //触底开始下一页
     var that=this;
     var pagenum = that.data.pagenum + 1; //获取当前页数并+1
-    console.log(that.data.pagenum, '1111');
+    console.log(that.data.pagenum, 'onReachBottom');
     this.setData({
       pagenum: pagenum, //更新当前页数
     })

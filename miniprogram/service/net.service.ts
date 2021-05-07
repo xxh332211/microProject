@@ -62,9 +62,9 @@ interface patrolData {
 export type mainType = "community" | "street" | "unit" | "village" | Number;
 
 class API {
-  // private HOST = 'https://testapi.021xzy.com/'; // 测试环境2
+  private HOST = 'https://testapi.021xzy.com/'; // 测试环境2
   // private HOST = 'https://ticket-api.jia-expo.com'; // 测试环境
-  private HOST = 'https://api.021xzy.com' // 正式环境
+  // private HOST = 'https://api.021xzy.com' // 正式环境
   private http(URL: string, type: "OPTIONS" | "GET" | "HEAD" | "POST" | "PUT" | "DELETE" | "TRACE" | "CONNECT" | undefined, option: { data?: any, header?: any }, authority?: 'authority') {
     let token = wx.getStorageSync('token')
     let _data: any = option.data || {};
@@ -419,6 +419,28 @@ class API {
     return this.http('/backend/xcx/SubDistrictDetail', "GET", { data: upData }, 'authority')
   }
 
+  /**
+   * 获取巡查报告数据
+   */
+  public getReportData(upData: {
+    type: mainType | number,
+    page: number | string,
+    pageSize?: number
+  }) {
+    let typeNumber: number | string = 0
+    typeNumber = this.typeHandle(upData.type)
+    upData.type = typeNumber
+    upData.page = upData.page || 1
+    upData.pageSize = upData.pageSize || 25
+    return this.http('/backend/api/patrolList', "GET", { data: upData }, 'authority')
+  }
+
+  /**
+   * 获取分类时效数据
+   */
+  public getClassificationData() {
+    return this.http('/backend/api/classification', "GET", {}, 'authority')
+  }
 
 
   // 后台
