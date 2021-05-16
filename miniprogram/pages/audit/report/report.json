@@ -1,0 +1,6 @@
+{
+  "navigationBarBackgroundColor":"#FF625D",
+  "navigationBarTitleText":"巡查报告",
+  "onReachBottomDistance":300,
+  "usingComponents": {}
+}

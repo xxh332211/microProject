@@ -62,9 +62,9 @@ interface patrolData {
 export type mainType = "community" | "street" | "unit" | "village" | Number;
 
 class API {
-  private HOST = 'https://testapi.021xzy.com/'; // 测试环境2
+  // private HOST = 'https://testapi.021xzy.com/'; // 测试环境2
   // private HOST = 'https://ticket-api.jia-expo.com'; // 测试环境
-  // private HOST = 'https://api.021xzy.com' // 正式环境
+  private HOST = 'https://api.021xzy.com' // 正式环境
   private http(URL: string, type: "OPTIONS" | "GET" | "HEAD" | "POST" | "PUT" | "DELETE" | "TRACE" | "CONNECT" | undefined, option: { data?: any, header?: any }, authority?: 'authority') {
     let token = wx.getStorageSync('token')
     let _data: any = option.data || {};
@@ -442,6 +442,48 @@ class API {
     return this.http('/backend/api/classification', "GET", {}, 'authority')
   }
 
+  // 检查是否绑定手机号
+  public getPhoneNumber() {
+    return this.http('/backend/api/checkUserMobile', "GET", {}, 'authority')
+  }
+  // 绑定微信手机号
+  public bindPhone(upData: {
+    wxcode: string,
+    encryptedData: string,
+    offset: string
+    }) {
+      return this.http('/backend/api/bindMobile', "POST", {data: upData}, 'authority')
+    }
+  // 输入手机号绑定
+  public iptPhone(upData: {
+    mobile: string,
+    }) {
+      return this.http('/backend/api/bindMobileNew', "POST", {data: upData}, 'authority')
+  }
+  // 台账填报
+  public newAccount(data: {
+    waste_dry: string,
+    waste_wet: string,
+    waste_recyclabl: string,
+    waste_architecture: string,
+    waste_harmful: string,
+    departure_time: string,
+  }) {
+    return this.http(`/backend/api/selfSaveRecord`, 'POST', { data: data }, 'authority')
+  }
+  public newAccount2(data: {
+    waste_glass: number | string,
+    waste_plastic: number | string,
+    waste_wood: number | string,
+    waste_paper: number | string,
+    waste_electronic: number | string,
+    waste_clothes: number | string,
+    waste_metal: number | string,
+    waste_other: number | string,
+    departure_time: string,
+  }) {
+    return this.http(`/backend/api/selfSaveRecord`, 'POST', { data: data }, 'authority')
+  }
 
   // 后台
   /**
@@ -456,6 +498,11 @@ class API {
   }
   public setFeedbackType(type: mainType) {
     wx.setStorageSync('feedbackType', type)
+  }
+  public getPoints(type?: mainType) {
+    let typeNumber: number | string = 0
+    typeNumber = this.typeHandle(type)
+    return this.http('/backend/xcx/rateData', "GET", { data: { type: typeNumber } }, 'authority')
   }
   /**
    * getFeedbackList

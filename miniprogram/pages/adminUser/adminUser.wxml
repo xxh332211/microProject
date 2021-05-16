@@ -40,6 +40,39 @@
         <l-icon name="toRight-fill" l-class="iconfont"></l-icon>
       </view>
     </view>
+
+    <view class="big_nav" bindtap="go" data-url="/pages/bigscreen/account/account">
+      <view class="left">
+        <view class="title">
+          <l-icon name="yemianpeizhi" l-class="iconfont"></l-icon>
+          <text>台账填报</text>
+        </view>
+        <view class="subtitle">
+          <!-- 24小时内反馈 -->
+        </view>
+      </view>
+      <view class="right">
+        <l-icon name="toRight-fill" l-class="iconfont"></l-icon>
+      </view>
+    </view>
   </view>
 </view>
 <tabbar current="adminUser"></tabbar>
+
+<l-dialog 
+  show="{{isShow}}"
+  type="alert"  
+  show-title="{{false}}"
+  locked="{{locked}}"
+  title="标题"
+  content="" 
+  bind:linconfirm="bindPhone"
+>
+  <input placeholder="请输入手机号" value="{{phoneNumber}}" type="number" maxlength="11"
+  bindinput='handleInputChange' data-name="phoneNumber" showRow="{{false}}"></input>
+</l-dialog>
+<l-toast
+  show="{{show}}"
+  icon="success"
+  title="绑定成功"
+/>

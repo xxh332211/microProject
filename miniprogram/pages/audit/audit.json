@@ -7,6 +7,10 @@
     "village":"./village",
     "unit":"./unitDetail",
     "street":"./streetDetail",
-    "tabbar":"/components/xxh-tabbar2"
+    "tabbar":"/components/xxh-tabbar2",
+    "l-popup":"/components/popup",
+    "l-dialog":"/components/dialog",
+    "l-input":"/components/input",
+    "l-toast":"/components/toast"
   }
 }

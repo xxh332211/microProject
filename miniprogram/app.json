@@ -21,7 +21,8 @@
     "pages/community/communityDetail/communityDetail",
     "pages/community/dustcart/dustcart",
     "pages/community/wingRoom/wingRoom",
-    "pages/audit/report/report"
+    "pages/audit/report/report",
+    "pages/bigscreen/account/account"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -3,6 +3,8 @@
   "navigationBarTitleText":"用户中心",
   "usingComponents": {
     "l-icon":"/components/icon",
-    "tabbar":"/components/xxh-tabbar2"
+    "tabbar":"/components/xxh-tabbar2",
+    "l-dialog":"/components/dialog",
+    "l-toast":"/components/toast"
   }
 }

@@ -7,7 +7,10 @@ Page({
    */
   data: {
     mainData:<any>{},
-    user:<any>{}
+    user:<any>{},
+    phoneNumber: '',
+    show: false,
+    isShow: false
   },
   go(e:any){
     // console.log(e.currentTarget.dataset.url)
@@ -21,11 +24,47 @@ Page({
       })
     })
   },
+  handleInputChange(e: any) {
+    let _this = this;
+    let dataset  = e.currentTarget.dataset;
+    let value = e.detail.value;
+    let phoneNumber = dataset.phoneNumber;
+    _this.data.phoneNumber = value;
+    _this.setData({
+      phoneNumber: _this.data.phoneNumber
+    })
+    // this.setData({
+    //   [e.currentTarget.dataset.prop]: e.detail.value
+    // })
+  },
+  bindPhone() {
+    // let phone = parseInt(this.data.phone);
+    let data = {
+      mobile: this.data.phoneNumber
+    }
+    console.log('xxxxx', data);
+    // return;
+    api.iptPhone(data).then((res) => {
+      console.log('绑定成功', res);
+      this.setData({
+        show:true
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    this.getData()
+    this.getData();
+    api.getPhoneNumber().then((res: any) => {
+      console.log('是否绑定手机号', res);
+      if(res.data.code === 200) {
+        this.setData({
+          isShow: true
+        })
+        console.log('用户需要授权绑定手机');
+      }
+    })
   },
 
   /**

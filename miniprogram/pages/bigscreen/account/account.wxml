@@ -1,0 +1,134 @@
+<view class="activity">
+  <view class="tab">
+    <view class="single {{current==='all'?'selected':''}}" data-type="all" bindtap="tap">
+      <text>普通填报</text>
+      <view class="line"></view>
+    </view>
+    <view class="single {{current==='done'?'selected':''}}" data-type="done" bindtap="tap">
+      <text>精准可回收物</text>
+      <view class="line"></view>
+    </view>
+  </view>
+
+  <!-- 普通填报 -->
+  <view class="forms" wx:if="{{current==='all'}}">
+    <l-form name="login" l-form-btn-class="l-form-btn-class" bind:linsubmit="submit">
+      <view class="single">
+        <view class="inputtitle">干垃圾（桶）</view>
+        <l-input id="title1" l-class="input_box" value="{{updata.waste_dry}}" bind:lininput="inputform"
+          bind:linblur="inputform" data-key="waste_dry" hide-label show-row="{{false}}" placeholder="请输入数量"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">湿垃圾（桶）</view>
+        <l-input id="title2" l-class="input_box" value="{{updata.waste_wet}}" bind:lininput="inputform"
+          bind:linblur="inputform" data-key="waste_wet" hide-label show-row="{{false}}" placeholder="请输入数量"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">可回收物（kg）</view>
+        <l-input id="title3" l-class="input_box" value="{{updata.waste_recyclabl}}" bind:lininput="inputform"
+          bind:linblur="inputform" data-key="waste_recyclabl" hide-label show-row="{{false}}" placeholder="请输入数量"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">建筑垃圾（车）</view>
+        <l-input id="title4" l-class="input_box" value="{{updata.waste_architecture}}" bind:lininput="inputform"
+          bind:linblur="inputform" data-key="waste_architecture" hide-label show-row="{{false}}" placeholder="请输入数量"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">有害垃圾（kg）</view>
+        <l-input id="title5" l-class="input_box" value="{{updata.waste_harmful}}" bind:lininput="inputform"
+          bind:linblur="inputform" data-key="waste_harmful" hide-label show-row="{{false}}" placeholder="请输入数量"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">台账记录时间</view>
+        <view class="dateBox">
+          <picker mode="date" value="{{updata.departure_time}}" start="2021-01-01" end="2030-12-31"               bindchange="inputform" data-key="departure_time">
+            <view class="picker_date">
+              {{updata.departure_time}}
+            </view>
+          </picker>
+          <picker mode="time" value="{{updata.time}}" start="00:00" end="23:59"               bindchange="inputform" data-key="time">
+            <view class="picker_date">
+              {{updata.time}}
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view slot="submit" class="submitbtn">
+        <l-button type="success" l-class="btn">提交</l-button>
+      </view>
+    </l-form>
+  </view>
+
+  <!-- 精准可回收物 -->
+  <view class="forms" wx:if="{{current==='done'}}" style='margin-top: -{{scroll_top}}px'>
+    <l-form name="login" l-form-btn-class="l-form-btn-class" bind:linsubmit="submit">
+      <view class="single">
+        <view class="inputtitle">废玻璃（kg）</view>
+        <l-input id="title11" l-class="input_box" value="{{dataObj.waste_glass}}" bind:lininput="inputform1"
+          bind:linblur="inputform2" data-key="waste_glass" hide-label show-row="{{false}}" placeholder="请输入数量"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">废塑料（kg）</view>
+        <l-input id="title22" l-class="input_box" value="{{dataObj.waste_plastic}}" bind:lininput="inputform1"
+          bind:linblur="inputform2" data-key="waste_plastic" hide-label show-row="{{false}}" placeholder="请输入数量"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">废木材（kg）</view>
+        <l-input id="title33" l-class="input_box" value="{{dataObj.waste_wood}}" bind:lininput="inputform1"
+          bind:linblur="inputform2" data-key="waste_wood" hide-label show-row="{{false}}" placeholder="请输入数量"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">废纸（kg）</view>
+        <l-input id="title44" l-class="input_box" value="{{dataObj.waste_paper}}" bind:lininput="inputform1"
+          bind:linblur="inputform2" data-key="waste_paper" hide-label show-row="{{false}}" placeholder="请输入数量"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">电子产品（kg）</view>
+        <l-input id="title55" l-class="input_box" value="{{dataObj.waste_electronic}}" bind:lininput="inputform1"
+          bind:linblur="inputform2" data-key="waste_electronic" hide-label show-row="{{false}}" placeholder="请输入数量"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">废衣物（kg）</view>
+        <l-input id="title66" l-class="input_box" value="{{dataObj.waste_clothes}}" bind:lininput="inputform1"
+          bind:linblur="inputform2" data-key="waste_clothes" hide-label show-row="{{false}}" placeholder="请输入数量"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">废金属（kg）</view>
+        <l-input id="title77" l-class="input_box" value="{{dataObj.waste_metal}}" bind:lininput="inputform1"
+          bind:linblur="inputform2" data-key="waste_metal" hide-label show-row="{{false}}" placeholder="请输入数量"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">其它（kg）</view>
+        <l-input id="title88" l-class="input_box" value="{{dataObj.waste_other}}" bind:lininput="inputform1"
+          bind:linblur="inputform2" data-key="waste_other" hide-label show-row="{{false}}" placeholder="请输入数量"/>
+      </view>
+
+      <view class="single">
+        <view class="inputtitle">台账记录时间</view>
+        <view class="dateBox">
+          <picker mode="date" value="{{dataObj.departure_time}}" start="2021-01-01" end="2030-12-31" bindchange="inputform2" data-key="departure_time">
+            <view class="picker_date">
+              {{dataObj.departure_time}}
+            </view>
+          </picker>
+          <picker mode="time" value="{{dataObj.time}}" start="00:00" end="23:59"               bindchange="inputform2" data-key="time">
+            <view class="picker_date">
+              {{dataObj.time}}
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view slot="submit" class="submitbtn">
+        <l-button type="success" l-class="btn">提交</l-button>
+      </view>
+    </l-form>
+  </view>
+</view>
+
+<l-toast
+  show="{{show}}"
+  icon="success"
+  title="提交成功"
+/>
