@@ -1,0 +1,24 @@
+<!--miniprogram/pages/audit/report.wxml-->
+<view class="main">
+  <view class="fzr_box">
+    <view class="tit">巡查报告</view>
+    <view class="form_ui">
+      <view class="form-tit li">
+        <text wx:if="{{current === 'community'}}">社区名称</text>
+        <text wx:if="{{current === 'unit'}}">单位名称</text>
+        <text wx:if="{{current === 'village'}}">行政村名称</text>
+        <text>等级</text>
+        <text>分数</text>
+        <text>评测日期</text>
+      </view>
+      <view class="content li" wx:for="{{dataObj}}" wx:key="index">
+        <text>{{item.name?item.name:''}}</text>
+        <text class="good" wx:if="{{item.point>=90}}">合格</text>
+        <text wx:if="{{item.point<90}}">不合格</text>
+        <text>{{item.point?item.point:''}}</text>
+        <text>{{item.create_time?item.create_time:''}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+

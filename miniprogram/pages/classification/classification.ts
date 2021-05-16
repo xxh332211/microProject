@@ -7,18 +7,58 @@ Page({
    */
   data: {
     current: <'community'|'unit'|'street'>'unit',
+    mainData:<any>{},
+    nowDate: ''
   },
   tap (e:any) {
     this.setData({
       current: e.currentTarget.dataset.type
     })
-    // this.getMainData();
+    this.getMainData();
   },
+  getMainData() {
+    api.getClassificationData().then((res:any)=>{
+      console.log('数据', res);
+      res.data.result.gan = this.toPoint(res.data.result['干垃圾完成率']);
+      res.data.result.shi = this.toPoint(res.data.result['湿垃圾完成率']);
+      res.data.result.khs = this.toPoint(res.data.result['可回收物完成率']);
+      this.setData({
+        mainData: res.data.result
+      })
+    })
+  },
+  toPoint (percent: any){
+    var str=percent.replace("%","");
+    console.log(str);
+    str = parseInt(str);
+    return str;
+},
+// 获取当前日期
+getNowFormatDate() {
+  var date = new Date();
+  var seperator1 = "-";
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var strDate = date.getDate();
+  if (month >= 1 && month <= 9) {
+      month = "0" + month;
+  }
+  if (strDate >= 0 && strDate <= 9) {
+      strDate = "0" + strDate;
+  }
+  var currentdate = year + seperator1 + month + seperator1 + strDate;
+  this.setData({
+    nowDate: currentdate
+  })
+  // return currentdate;
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    wx.setNavigationBarColor({backgroundColor:'#FF625D',frontColor:'#ffffff'})
+    wx.setNavigationBarColor({backgroundColor:'#FF625D',frontColor:'#ffffff'});
+    this.getMainData();
+    this.getNowFormatDate();
   },
 
   /**

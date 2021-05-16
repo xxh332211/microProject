@@ -11,6 +11,8 @@ Page({
     // wx.redirectTo({url:'/pages/community/communityDetail/communityDetail'});
     // wx.redirectTo({url:'/pages/community/dustcart/dustcart'});
     // wx.redirectTo({url:'/pages/community/wingRoom/wingRoom'});
+    // wx.redirectTo({url:'/pages/bigscreen/account/account'});
+    // wx.redirectTo({url:'/pages/adminUser/adminUser'});
     wx.showLoading({
       title:'加载中'
     });

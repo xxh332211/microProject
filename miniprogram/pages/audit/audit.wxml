@@ -58,19 +58,19 @@
           </view>
         </view>        
       </view>
-      <view class="score" bindtap="goFeedback">
+      <view class="score" bindtap="goReport">
         <view class="left">
           <view class="title">
             总分
           </view>
           <view class="bottom">
-            95.95
+            {{dataPoints.total}}
             <text>分</text>
           </view>
         </view>
         <view class="right">
           <view class="top">
-            <text>+0.95</text>
+            <text class="text {{dataPoints.flag===-1?'cur':''}}">{{dataPoints.point}}</text>
             分
           </view>
           <view class="bottom">
@@ -89,3 +89,25 @@
 </view>
 
 <tabbar current="audit"></tabbar>
+
+<!-- <l-popup show="{{isShow}}">
+  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">授权绑定手机号码</button>
+</l-popup> -->
+
+<l-dialog 
+  show="{{isShow}}"
+  type="alert"
+  show-title="{{false}}"
+  locked="{{locked}}"
+  title="标题"
+  content="" 
+  bind:linconfirm="bindPhone"
+>
+  <input placeholder="请输入手机号" value="{{phoneNumber}}" maxlength="11" type="number"
+  bindinput='handleInputChange' data-name="phoneNumber" showRow="{{false}}"></input>
+</l-dialog>
+<l-toast
+  show="{{show}}"
+  icon="success"
+  title="绑定成功"
+/>

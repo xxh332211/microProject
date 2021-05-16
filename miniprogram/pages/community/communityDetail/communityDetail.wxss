@@ -79,7 +79,7 @@
 .main .fzr_box {
   width: 670rpx;
   background: #F5F6FA;
-  border-radius: 30px;
+  border-radius: 30rpx;
   margin: 40rpx auto;
 }
 .main .fzr_box .tit {

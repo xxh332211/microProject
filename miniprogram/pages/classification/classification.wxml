@@ -7,7 +7,7 @@
         <text class="title">梅陇镇</text>
       </view>
       <view class="lasttime">
-        <text>截止时间: 2020-11-20</text>
+        <text>截止时间: {{nowDate}}</text>
       </view>
     </view>
     <image src="../../static/banner.png"></image>
@@ -15,7 +15,7 @@
   <view class="info">
     <view class="top">
       <view class="percent">
-        100%
+        {{mainData['资源利用率']}}
       </view>
       <view class="main_title">
         资源化利用率
@@ -27,15 +27,15 @@
     <view class="main_info">
       <view class="middle">
         <view class="weight">
-          <text class="bold_number">9</text>
+          <text class="bold_number">{{mainData['干垃圾总量']}}</text>
           <text class="subword">吨</text>
         </view>
         <view class="title">
           <text class="title_bold">干垃圾总量</text>
         </view>
         <view class="percent">
-          <text class="percent_bold">90%</text>
-          <l-progress percent="90" active-color="#FF5175"></l-progress>
+          <text class="percent_bold">{{mainData['干垃圾完成率']}}</text>
+          <l-progress percent="{{mainData.gan}}" active-color="#FF5175"></l-progress>
         </view>
         <view class="subtitle">
           <text class="subword">街道控制完成率</text>
@@ -43,15 +43,15 @@
       </view>
       <view class="middle">
         <view class="weight">
-          <text class="bold_number">9</text>
+          <text class="bold_number">{{mainData['湿垃圾总量']}}</text>
           <text class="subword">吨</text>
         </view>
         <view class="title">
           <text class="title_bold">湿垃圾总量</text>
         </view>
         <view class="percent">
-          <text class="percent_bold">90%</text>
-          <l-progress percent="90" active-color="#FF5175"></l-progress>
+          <text class="percent_bold">{{mainData['湿垃圾完成率']}}</text>
+          <l-progress percent="{{mainData.shi}}" active-color="#FF5175"></l-progress>
         </view>
         <view class="subtitle">
           <text class="subword">街道指标完成率</text>
@@ -61,7 +61,7 @@
         <view class="big_header">
           <view class="left">
             <view>
-              <text class="bold_number">170.1</text>
+              <text class="bold_number">{{mainData['可回收物总量']}}</text>
               <text class="subword">吨</text>
             </view>
             <view>
@@ -71,10 +71,10 @@
           <view class="line"></view>
           <view class="right">
             <view>
-              <text class="percent_bold">113.4%</text>
+              <text class="percent_bold">{{mainData['可回收物完成率']}}</text>
             </view>
             <view>
-              <l-progress percent="90" active-color="#FF5175"></l-progress>
+              <l-progress percent="{{mainData.khs}}" active-color="#FF5175"></l-progress>
             </view>
             <text class="subword">街道指标量完成率</text>
           </view>
@@ -83,43 +83,43 @@
           <view class="single">
             <view class="subject">金属</view>
             <view class="percent">
-              <l-progress percent="90" active-color="#FF5175"></l-progress>
+              <l-progress percent="{{mainData['金属']/mainData['刻度']*100}}" active-color="#FF5175"></l-progress>
             </view>
-            <view class="number">1596KG</view>
+            <view class="number">{{mainData['金属']}}KG</view>
           </view>
           <view class="single">
             <view class="subject">纺衣服</view>
             <view class="percent">
-              <l-progress percent="90" active-color="#FF5175"></l-progress>
+              <l-progress percent="{{mainData['纺织衣物']/mainData['刻度']*100}}" active-color="#FF5175"></l-progress>
             </view>
-            <view class="number">1596KG</view>
+            <view class="number">{{mainData['纺织衣物']}}KG</view>
           </view>
           <view class="single">
             <view class="subject">玻璃</view>
             <view class="percent">
-              <l-progress percent="90" active-color="#FF5175"></l-progress>
+              <l-progress percent="{{mainData['玻璃']/mainData['刻度']*100}}" active-color="#FF5175"></l-progress>
             </view>
-            <view class="number">1596KG</view>
+            <view class="number">{{mainData['玻璃']}}KG</view>
           </view>
           <view class="single">
             <view class="subject">塑料</view>
             <view class="percent">
-              <l-progress percent="90" active-color="#FF5175"></l-progress>
+              <l-progress percent="{{mainData['塑料']/mainData['刻度']*100}}" active-color="#FF5175"></l-progress>
             </view>
-            <view class="number">1596KG</view>
+            <view class="number">{{mainData['塑料']}}KG</view>
           </view>
           <view class="single">
             <view class="subject">废纸</view>
             <view class="percent">
-              <l-progress percent="90" active-color="#FF5175"></l-progress>
+              <l-progress percent="{{mainData['废纸']/mainData['刻度']*100}}" active-color="#FF5175"></l-progress>
             </view>
-            <view class="number">1596KG</view>
+            <view class="number">{{mainData['废纸']}}KG</view>
           </view>
         </view>
       </view>
       <view class="small">
         <view>
-          <text class="bold_number">175</text>
+          <text class="bold_number">{{mainData['有害垃圾']}}</text>
           <text class="subword">KG</text>
         </view>
         <view>
@@ -128,7 +128,7 @@
       </view>
       <view class="small">
         <view>
-          <text class="bold_number">2319</text>
+          <text class="bold_number">{{mainData['建筑垃圾']}}</text>
           <text class="subword">KG</text>
         </view>
         <view>
@@ -137,7 +137,7 @@
       </view>
     </view>
   </view>
-  <view class="content">
+  <!-- <view class="content">
     <view class="tab">
       <view class="single {{current==='community'?'selected':''}}" data-type="community" bindtap="tap">
         <text>居住地</text>
@@ -155,6 +155,6 @@
     <view class="detail">
       <summary></summary>
     </view>
-  </view>
+  </view> -->
 </view>
 <tabbar current="classification"></tabbar>

@@ -16,7 +16,7 @@ Page({
       this.setData({
         communityList: res.data.result
       })
-      console.log(this.data.communityList)
+      console.log(this.data.communityList, 'xxxxxxxxxxxx')
     })
     api.getRecord('village').then((res:any)=>{
       this.setData({

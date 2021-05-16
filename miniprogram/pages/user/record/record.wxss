@@ -84,3 +84,7 @@
 .maincolor_b {
   background: #34bfa3 !important;
 }
+.tab-content .l-right-desc {
+  color: #000;
+  font-size: 24rpx;
+}

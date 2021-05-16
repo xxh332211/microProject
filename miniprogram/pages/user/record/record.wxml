@@ -2,22 +2,30 @@
 <l-tabs bind:linchange="changeTabs" l-class-active="maincolor_c" l-class-line="maincolor_b">
   <l-tabpanel tab="社区巡查({{communityList.length}})" key="one" slot="one">
     <view class="tab-content">
-      <l-list bind:lintap="tapHandle" title="{{item.name}}" desc="巡查时间: {{item.create_time}}" tag-content="得分:{{item.point}}" gap="20" tagShape="circle" tag-color="#34bfa3" tag-position="right" wx:for="{{communityList}}" wx:key="index" data-item="{{item}}" data-type="community"></l-list>
+      <l-list bind:lintap="tapHandle" title="{{item.name}}" desc="巡查时间: {{item.create_time}}"
+        right-desc="状态：{{item.patrol_status_name}}"  l-right-class="l-right-desc"
+        tag-content="得分:{{item.point}}" gap="20" tagShape="circle" tag-color="#34bfa3" tag-position="right" wx:for="{{communityList}}" wx:key="index" data-item="{{item}}" data-type="community"></l-list>
     </view>
   </l-tabpanel>
   <l-tabpanel tab="村委巡查({{villageList.length}})" key="onehalf" slot="onehalf">
     <view class="tab-content">
-      <l-list bind:lintap="tapHandle" title="{{item.name}}" desc="巡查时间: {{item.create_time}}" tag-content="得分:{{item.point}}" gap="20" tagShape="circle" tag-color="#34bfa3" tag-position="right" wx:for="{{villageList}}" wx:key="index" data-item="{{item}}" data-type="village"></l-list>
+      <l-list bind:lintap="tapHandle" title="{{item.name}}" desc="巡查时间: {{item.create_time}}"
+        right-desc="状态：{{item.patrol_status_name}}"  l-right-class="l-right-desc"
+        tag-content="得分:{{item.point}}" gap="20" tagShape="circle" tag-color="#34bfa3" tag-position="right" wx:for="{{villageList}}" wx:key="index" data-item="{{item}}" data-type="village"></l-list>
     </view>
   </l-tabpanel>
   <l-tabpanel tab="单位巡查({{unitList.length}})" key="two" slot="two">
     <view class="tab-content">
-      <l-list bind:lintap="tapHandle" title="{{item.name}}" desc="巡查时间: {{item.create_time}}" tag-content="得分:{{item.point}}" gap="20" tagShape="circle" tag-color="#34bfa3" tag-position="right" wx:for="{{unitList}}" wx:key="index" data-item="{{item}}" data-type="unit"></l-list>
+      <l-list bind:lintap="tapHandle" title="{{item.name}}" desc="巡查时间: {{item.create_time}}"
+        right-desc="状态：{{item.patrol_status_name}}"  l-right-class="l-right-desc"
+        tag-content="得分:{{item.point}}" gap="20" tagShape="circle" tag-color="#34bfa3" tag-position="right" wx:for="{{unitList}}" wx:key="index" data-item="{{item}}" data-type="unit"></l-list>
     </view>
   </l-tabpanel>
   <l-tabpanel tab="道路巡查({{streetList.length}})" key="three" slot="three">
     <view class="tab-content">
-      <l-list bind:lintap="tapHandle" title="{{item.name}}" desc="巡查时间: {{item.create_time}}" tag-content="得分:{{item.point}}" gap="20" tagShape="circle" tag-color="#34bfa3" tag-position="right" wx:for="{{streetList}}" wx:key="index" data-item="{{item}}" data-type="street"></l-list>
+      <l-list bind:lintap="tapHandle" title="{{item.name}}" desc="巡查时间: {{item.create_time}}"
+        right-desc="状态：{{item.patrol_status_name}}"  l-right-class="l-right-desc"
+        tag-content="得分:{{item.point}}" gap="20" tagShape="circle" tag-color="#34bfa3" tag-position="right" wx:for="{{streetList}}" wx:key="index" data-item="{{item}}" data-type="street"></l-list>
     </view>
   </l-tabpanel>
 </l-tabs>
