@@ -627,8 +627,8 @@ class API {
           let  latitude = point[1]
           outPut.push({
             id:index,
-            width:40,
-            height:40,
+            width:20,
+            height:20,
             latitude,
             longitude,
             iconPath: '/static/markerHome.png',

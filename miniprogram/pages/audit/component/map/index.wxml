@@ -7,7 +7,7 @@
       </view>
     </view>
   </view>
-  <map longitude="{{center.lng}}" latitude="{{center.lat}}" scale="12.5" polygons="{{polygons}}" polyline="{{polyline}}"
+  <map bindtap="tabmap" polyline="{{polyline}}" longitude="{{center.lng}}" latitude="{{center.lat}}" scale="12.5" polygons="{{polygons}}" polyline="{{polyline}}"
     markers="{{markers}}" bindmarkertap="markerTab">
   </map>
 </view>
