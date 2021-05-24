@@ -22,12 +22,14 @@
     "types": ["miniprogram-api-typings"],
     "strictPropertyInitialization": true,
     "lib": ["es5","dom","ES2015.Promise"],
+    "resolveJsonModule":true,
     "typeRoots": [
       "./typings"
     ]
   },
   "include": [
-    "./**/*.ts"
+    "./**/*.ts",
+    "./**/*.json", "miniprogram/pages/audit/component/map/ply.js"
   ],
   "exclude": [
     "node_modules"
