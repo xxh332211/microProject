@@ -1,12 +1,12 @@
 <!--pages/audit/component/map/index.wxml-->
 <view class="map">
-  <div class="box">
-    <view class="markerbox">
+  <view class="box" wx:if="{{currentInfo.id}}">
+    <view class="markerbox" >
       <view class="markerword" wx:for="{{currentInfo.list}}" wx:key="" wx:for-index="idx" wx:for-item="i">
         {{i.descr}}
       </view>
     </view>
-  </div>
+  </view>
   <map longitude="{{center.lng}}" latitude="{{center.lat}}" scale="12.5" polygons="{{polygons}}" polyline="{{polyline}}"
     markers="{{markers}}" bindmarkertap="markerTab">
   </map>
