@@ -33,12 +33,14 @@ let getLcations = (arr: Array<string>) => {
     getlocation()
   })
 }
+import api from '../../../../service/net.service';
 import { ply, ply1, ply3, ply4, ply5, ply6, ply7 } from './points';
 Component({
   properties: {
     qqmapsdk: null
   },
   data: {
+    currentInfo:{},
     center:{
       lat:'31.102343',
       lng:'121.426674'
@@ -87,6 +89,7 @@ Component({
         zIndex: 1
       }
     ],
+    markers:[],
     polyline:[{
       points: ply4.points,
       color: "#00f",
@@ -94,10 +97,25 @@ Component({
     }]
   },
   methods: {
-
+    markerTab (e:any) {
+      console.log(e)
+      let arr = this.data.markers.filter((item:any)=>item.id===e.detail.markerId)
+      this.setData({
+        currentInfo : arr[0]
+      })
+    },
+    getMap () {
+      api.getMap().then((res:any)=>{
+        console.log(res)
+        this.setData({
+          markers:res
+        })
+      })
+    }
   },
 
   attached() {
+    this.getMap()
     getLcations(['梅陇镇', '梅陇二村']).then((res: any) => {
       this.setData({
         center:res.data[0]
