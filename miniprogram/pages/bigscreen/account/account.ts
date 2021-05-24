@@ -25,8 +25,8 @@ Page({
       waste_clothes: '',
       waste_metal: '',
       waste_other: '',
-      departure_time: '选择日期',
-      time: '选择时间'
+      // departure_time: '选择日期',
+      // time: '选择时间'
     }
   },
   tap (e:any) {
@@ -71,43 +71,51 @@ Page({
   //   return flag
   // },
   submit() {
-    if(this.data.current === "all") {
-      // if (this.check()) {
-        // 用户已授权且表单验证成功
-        console.log(this.data.updata);
-        // return;
-        api.newAccount(this.data.updata).then(res=>{
-          // console.log(res)
-          // wx.navigateBack()
-          this.setData({ show:true })
-        })
-        console.log('哈哈哈哈')
-      // } else {
-      //   wx.showToast({
-      //     title: '请完善表单',
-      //     icon: 'none',
-      //     duration: 2000
-      //   })
-      // }
-    } else {
-      // if (this.check2()) {
-        // 用户已授权且表单验证成功
-        console.log(this.data.dataObj);
-        // return;
-        api.newAccount2(this.data.dataObj).then(res=>{
-          // console.log(res)
-          // wx.navigateBack()
-          this.setData({ show:true })
-        })
-        console.log('哈哈哈哈')
-      // } else {
-      //   wx.showToast({
-      //     title: '请完善表单',
-      //     icon: 'none',
-      //     duration: 2000
-      //   })
-      // }
-    }
+    Object.assign(this.data.updata, this.data.dataObj);
+    // console.log('普通', this.data.updata);
+    // console.log('精准', this.data.dataObj);
+    api.newAccount(this.data.updata).then(res=>{
+      console.log(res);
+      this.setData({ show:true });
+    })
+    // return
+    // if(this.data.current === "all") {
+    //   // if (this.check()) {
+    //     // 用户已授权且表单验证成功
+    //     console.log(this.data.updata);
+    //     // return;
+    //     api.newAccount(this.data.updata).then(res=>{
+    //       // console.log(res)
+    //       // wx.navigateBack()
+    //       this.setData({ show:true })
+    //     })
+    //     console.log('哈哈哈哈')
+    //   // } else {
+    //   //   wx.showToast({
+    //   //     title: '请完善表单',
+    //   //     icon: 'none',
+    //   //     duration: 2000
+    //   //   })
+    //   // }
+    // } else {
+    //   // if (this.check2()) {
+    //     // 用户已授权且表单验证成功
+    //     console.log(this.data.dataObj);
+    //     // return;
+    //     api.newAccount2(this.data.dataObj).then(res=>{
+    //       // console.log(res)
+    //       // wx.navigateBack()
+    //       this.setData({ show:true })
+    //     })
+    //     console.log('哈哈哈哈')
+    //   // } else {
+    //   //   wx.showToast({
+    //   //     title: '请完善表单',
+    //   //     icon: 'none',
+    //   //     duration: 2000
+    //   //   })
+    //   // }
+    // }
   },
   /**
    * 生命周期函数--监听页面加载

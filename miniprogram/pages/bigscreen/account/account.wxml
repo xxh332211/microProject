@@ -61,60 +61,60 @@
   </view>
 
   <!-- 精准可回收物 -->
-  <view class="forms" wx:if="{{current==='done'}}" style='margin-top: -{{scroll_top}}px'>
+  <view class="forms" wx:if="{{current==='done'}}">
     <l-form name="login" l-form-btn-class="l-form-btn-class" bind:linsubmit="submit">
       <view class="single">
         <view class="inputtitle">废玻璃（kg）</view>
-        <l-input id="title11" l-class="input_box" value="{{dataObj.waste_glass}}" bind:lininput="inputform1"
+        <l-input id="title11" l-class="input_box" value="{{dataObj.waste_glass}}" bind:lininput="inputform2"
           bind:linblur="inputform2" data-key="waste_glass" hide-label show-row="{{false}}" placeholder="请输入数量"/>
       </view>
       <view class="single">
         <view class="inputtitle">废塑料（kg）</view>
-        <l-input id="title22" l-class="input_box" value="{{dataObj.waste_plastic}}" bind:lininput="inputform1"
+        <l-input id="title22" l-class="input_box" value="{{dataObj.waste_plastic}}" bind:lininput="inputform2"
           bind:linblur="inputform2" data-key="waste_plastic" hide-label show-row="{{false}}" placeholder="请输入数量"/>
       </view>
       <view class="single">
         <view class="inputtitle">废木材（kg）</view>
-        <l-input id="title33" l-class="input_box" value="{{dataObj.waste_wood}}" bind:lininput="inputform1"
+        <l-input id="title33" l-class="input_box" value="{{dataObj.waste_wood}}" bind:lininput="inputform2"
           bind:linblur="inputform2" data-key="waste_wood" hide-label show-row="{{false}}" placeholder="请输入数量"/>
       </view>
       <view class="single">
         <view class="inputtitle">废纸（kg）</view>
-        <l-input id="title44" l-class="input_box" value="{{dataObj.waste_paper}}" bind:lininput="inputform1"
+        <l-input id="title44" l-class="input_box" value="{{dataObj.waste_paper}}" bind:lininput="inputform2"
           bind:linblur="inputform2" data-key="waste_paper" hide-label show-row="{{false}}" placeholder="请输入数量"/>
       </view>
       <view class="single">
         <view class="inputtitle">电子产品（kg）</view>
-        <l-input id="title55" l-class="input_box" value="{{dataObj.waste_electronic}}" bind:lininput="inputform1"
+        <l-input id="title55" l-class="input_box" value="{{dataObj.waste_electronic}}" bind:lininput="inputform2"
           bind:linblur="inputform2" data-key="waste_electronic" hide-label show-row="{{false}}" placeholder="请输入数量"/>
       </view>
       <view class="single">
         <view class="inputtitle">废衣物（kg）</view>
-        <l-input id="title66" l-class="input_box" value="{{dataObj.waste_clothes}}" bind:lininput="inputform1"
+        <l-input id="title66" l-class="input_box" value="{{dataObj.waste_clothes}}" bind:lininput="inputform2"
           bind:linblur="inputform2" data-key="waste_clothes" hide-label show-row="{{false}}" placeholder="请输入数量"/>
       </view>
       <view class="single">
         <view class="inputtitle">废金属（kg）</view>
-        <l-input id="title77" l-class="input_box" value="{{dataObj.waste_metal}}" bind:lininput="inputform1"
+        <l-input id="title77" l-class="input_box" value="{{dataObj.waste_metal}}" bind:lininput="inputform2"
           bind:linblur="inputform2" data-key="waste_metal" hide-label show-row="{{false}}" placeholder="请输入数量"/>
       </view>
       <view class="single">
         <view class="inputtitle">其它（kg）</view>
-        <l-input id="title88" l-class="input_box" value="{{dataObj.waste_other}}" bind:lininput="inputform1"
+        <l-input id="title88" l-class="input_box" value="{{dataObj.waste_other}}" bind:lininput="inputform2"
           bind:linblur="inputform2" data-key="waste_other" hide-label show-row="{{false}}" placeholder="请输入数量"/>
       </view>
 
       <view class="single">
         <view class="inputtitle">台账记录时间</view>
         <view class="dateBox">
-          <picker mode="date" value="{{dataObj.departure_time}}" start="2021-01-01" end="2030-12-31" bindchange="inputform2" data-key="departure_time">
+          <picker mode="date" value="{{updata.departure_time}}" start="2021-01-01" end="2030-12-31" bindchange="inputform" data-key="departure_time">
             <view class="picker_date">
-              {{dataObj.departure_time}}
+              {{updata.departure_time}}
             </view>
           </picker>
-          <picker mode="time" value="{{dataObj.time}}" start="00:00" end="23:59"               bindchange="inputform2" data-key="time">
+          <picker mode="time" value="{{updata.time}}" start="00:00" end="23:59"               bindchange="inputform" data-key="time">
             <view class="picker_date">
-              {{dataObj.time}}
+              {{updata.time}}
             </view>
           </picker>
         </view>

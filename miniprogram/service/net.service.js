@@ -48,7 +48,7 @@ const successHandle = (res) => {
 };
 class API {
     constructor() {
-        this.HOST = 'https://api.021xzy.com';
+        this.HOST = 'https://testapi.021xzy.com/';
     }
     http(URL, type, option, authority) {
         let token = wx.getStorageSync('token');
@@ -332,6 +332,9 @@ class API {
         return this.http(`/backend/api/selfSaveRecord`, 'POST', { data: data }, 'authority');
     }
     newAccount2(data) {
+        return this.http(`/backend/api/selfSaveRecord`, 'POST', { data: data }, 'authority');
+    }
+    newAccount3(data) {
         return this.http(`/backend/api/selfSaveRecord`, 'POST', { data: data }, 'authority');
     }
     getAnalysisData(type) {
