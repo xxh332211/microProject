@@ -49,6 +49,11 @@ Page({
       this.setData({
         show:true
       })
+    }).catch((err) => {
+      console.log('err', err);
+      this.setData({
+        isShow:true
+      })
     })
   },
   /**

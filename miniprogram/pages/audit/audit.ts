@@ -140,8 +140,6 @@ Page({
     // })
   },
   bindPhone() {
-    // console.log(this.data.phone);
-    // let phone = parseInt(this.data.phone);
     let data = {
       mobile: this.data.phoneNumber
     }
@@ -151,6 +149,11 @@ Page({
       // console.log('绑定成功');
       this.setData({
         show:true
+      })
+    }).catch((err) => {
+      console.log('err', err);
+      this.setData({
+        isShow:true
       })
     })
   },

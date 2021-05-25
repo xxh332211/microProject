@@ -62,9 +62,9 @@ interface patrolData {
 export type mainType = "community" | "street" | "unit" | "village" | Number;
 
 class API {
-  private HOST = 'https://testapi.021xzy.com/'; // 测试环境2
+  // private HOST = 'https://testapi.021xzy.com/'; // 测试环境2
   // private HOST = 'https://ticket-api.jia-expo.com'; // 测试环境
-  // private HOST = 'https://api.021xzy.com' // 正式环境
+  private HOST = 'https://api.021xzy.com' // 正式环境
   private http(URL: string, type: "OPTIONS" | "GET" | "HEAD" | "POST" | "PUT" | "DELETE" | "TRACE" | "CONNECT" | undefined, option: { data?: any, header?: any }, authority?: 'authority') {
     let token = wx.getStorageSync('token')
     let _data: any = option.data || {};

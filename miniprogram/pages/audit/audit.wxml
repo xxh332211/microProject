@@ -98,7 +98,7 @@
   show="{{isShow}}"
   type="alert"
   show-title="{{false}}"
-  locked="{{locked}}"
+  locked="false"
   title="标题"
   content="" 
   bind:linconfirm="bindPhone"
