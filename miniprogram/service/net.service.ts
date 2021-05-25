@@ -64,7 +64,8 @@ export type mainType = "community" | "street" | "unit" | "village" | Number;
 class API {
   // private HOST = 'https://testapi.021xzy.com/'; // 测试环境2
   // private HOST = 'https://ticket-api.jia-expo.com'; // 测试环境
-  private HOST = 'https://api.021xzy.com' // 正式环境
+  private HOST = 'https://api.021xzy.com/' // 正式环境
+
   private http(URL: string, type: "OPTIONS" | "GET" | "HEAD" | "POST" | "PUT" | "DELETE" | "TRACE" | "CONNECT" | undefined, option: { data?: any, header?: any }, authority?: 'authority') {
     let token = wx.getStorageSync('token')
     let _data: any = option.data || {};
@@ -611,6 +612,40 @@ class API {
   public getRate(type: mainType|string) {
     let typenumber = this.typeHandle(type)
     return this.http('/backend/xcx/yield', 'GET', { data: { type: typenumber } }, 'authority')
+  }
+  /**
+   * getMap
+   * 获取地图接口
+   */
+  public getMap() {
+    return new Promise((resolve,reject)=>{
+      this.http(`xcx/api/map`,'GET',{},'authority').then((res:any)=>{
+        let outPut = <any>[]
+        let data = res.data.result
+        data.forEach((element:any,index:number) => {
+          let point = element.center.split(',')
+          let  longitude = point[0]
+          let  latitude = point[1]
+          outPut.push({
+            id:index,
+            width:20,
+            height:20,
+            latitude,
+            longitude,
+            iconPath: '/static/markerHome.png',
+            list:element.list,
+            customCallout: {
+              anchorY: 10,
+              anchorX: 10,
+              display: 'BYCLICK',
+            },
+          })
+        });
+        resolve(outPut)
+      },(err)=>{
+        reject(err)
+      })
+    }) 
   }
 }
 const api = new API

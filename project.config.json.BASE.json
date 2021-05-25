@@ -31,9 +31,6 @@
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
     "useMultiFrameRuntime": false,
-    "useApiHook": false,
-    "useApiHostProcess": false,
-    "useMultiFrameRuntime": true,
     "useApiHook": true,
     "babelSetting": {
       "ignore": [],
@@ -41,15 +38,14 @@
       "outputPath": ""
     },
     "enableEngineNative": false,
-    "bundle": false,
+    "bundle": true,
     "useIsolateContext": true,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
     "userConfirmedBundleSwitch": true,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "useApiHostProcess": true
+    "minifyWXSS": true
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
