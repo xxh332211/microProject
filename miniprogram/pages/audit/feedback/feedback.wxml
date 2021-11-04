@@ -20,6 +20,20 @@
         </view>
       </view>
       <view class="search">
+        <view class="dateBox">
+          <picker mode="date" value="{{startDate}}" start="2020-01-01" end="2030-12-31" bindchange="startChange" data-key="startDate" style="margin-right:20rpx;">
+            <view class="picker_date">
+              <l-input id="title5" l-class="input_box" value="{{startDate}}" data-key="startDate" hide-label show-row="{{false}}" placeholder="选择开始时间"/>
+              <!-- {{startDate?startDate:'选择开始时间'}} -->
+            </view>
+          </picker>
+          <picker mode="date" value="{{endDate}}" start="2020-01-01" end="2030-12-31" bindchange="endChange" data-key="endDate">
+            <view class="picker_date">
+              <l-input id="title5" l-class="input_box" value="{{endDate}}" data-key="endDate" hide-label show-row="{{false}}" placeholder="选择结束时间"/>
+              <!-- {{endDate?endDate:'选择结束时间'}} -->
+            </view>
+          </picker>
+        </view> 
         <l-search bind:linclear="clear" bind:linchange="search" value="{{keyword}}" shape="circle" bg-color="#F5F6FA" show-cancel="{{false}}"></l-search>
       </view>
       <view class="list">

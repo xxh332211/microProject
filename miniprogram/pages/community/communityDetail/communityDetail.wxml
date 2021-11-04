@@ -54,7 +54,8 @@
         物业公司：<text class="txt">{{dataObj.property_name?dataObj.property_name:''}}</text>
       </view>
       <view class="li">
-        小区地址：<text class="txt" wx:if="{{dataObj.address}}">{{dataObj.address}}</text>
+        小区地址：<text class="txt" style="margin-right:12rpx;" wx:if="{{dataObj.address}}">{{dataObj.address}}</text>
+        <l-button type="default" size="mini" bindtap='getCoordinate'>点击导航</l-button>
       </view>
     </view>
 

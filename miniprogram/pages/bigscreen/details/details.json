@@ -1,0 +1,22 @@
+{
+  "navigationBarBackgroundColor":"#FF625D",
+  "navigationBarTitleText":"社区详情",
+  "navigationBarTextStyle":"white",
+  "usingComponents": {
+    "l-form-item":"/components/form-item",
+    "l-textarea":"/components/textarea",
+    "l-image-picker":"/components/image-picker",
+    "l-radio-group":"/components/radio-group",
+    "l-radio":"/components/radio",
+    "l-input":"/components/input",
+    "l-button":"/components/button",
+    "toast":"/components/toast",
+    "l-form":"/components/form",
+    "l-icon":"/components/icon",
+    "l-toast":"/components/toast",
+    "l-popup":"/components/popup",
+    "l-checkbox":"/components/checkbox",
+    "l-checkbox-group":"/components/checkbox-group",
+    "van-calendar": "@vant/weapp/calendar/index"
+  }
+}

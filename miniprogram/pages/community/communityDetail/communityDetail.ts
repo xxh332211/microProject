@@ -8,6 +8,8 @@ Page({
    */
   data: {
     dataObj:<any>{},
+    addressData:<any>{},
+    isShow: false,
     id: 1,
     current: <mainType>'community',
     // background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
@@ -89,6 +91,37 @@ Page({
       autoplay: !this.data.autoplay
     })
   },
+  // 获取位置经纬度
+  getCoordinate() {
+    console.log('address:', this.data.dataObj.address)
+    let data: string = this.data.dataObj.address;
+    // let data: string = '上海徐汇';
+    api.getCoordinateMsg((data)).then((res:any)=>{
+      console.log('坐标数据', res);
+      this.setData({addressData: res.data.result})
+      this.getAddress();
+    }).catch(err => {
+      console.log('err', err);
+    })
+  },
+  // 导航
+  getAddress() {
+    let addressObj = this.data.addressData;
+    wx.getLocation({
+      // type: 'gcj02', //返回可以用于wx.openLocation的经纬度wgs84
+      type: 'wgs84', //返回可以用于wx.openLocation的经纬度wgs84
+      success (res) {
+        console.log('addressObj',addressObj)
+        const latitude = addressObj.lat ? addressObj.lat : res.latitude
+        const longitude = addressObj.lng ? addressObj.lng : res.longitude
+        wx.openLocation({
+          latitude,
+          longitude,
+          scale: 18
+        })
+      }
+     })
+  },
   // intervalChange(e) {
   //   this.setData({
   //     interval: e.detail.value
@@ -114,15 +147,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.getDataObjt();
+    console.log('12345', this.data.dataObj)
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getDataObjt();
-    console.log('12345', this.data.dataObj)
+    
   },
 
   /**

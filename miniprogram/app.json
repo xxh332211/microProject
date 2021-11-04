@@ -22,7 +22,18 @@
     "pages/community/dustcart/dustcart",
     "pages/community/wingRoom/wingRoom",
     "pages/audit/report/report",
-    "pages/bigscreen/account/account"
+    "pages/bigscreen/account/account",
+    "pages/bigscreen/details/details"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/activity",
+      "name": "activity",
+      "pages": [
+        "goods_sckill_details/index",
+        "goods_sckill/index"
+      ]
+    }
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -137,6 +137,24 @@ page {
   padding-left: 20rpx;
   padding-right: 20rpx;
 }
+.main .content .search .dateBox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding: 0 20rpx;
+}
+.main .content .search .dateBox .picker_date .input_box {
+  height: 60rpx;
+  background: #FFFFFF;
+  border: 2rpx solid #DDE1ED;
+  opacity: 1;
+  border-radius: 30rpx;
+}
+.main .content .search .dateBox .picker_date .input_box .input_label::before {
+  content: '' !important;
+  display: none !important;
+}
 .main .content .list {
   padding-left: 39rpx;
   padding-right: 39rpx;

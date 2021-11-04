@@ -62,9 +62,9 @@ interface patrolData {
 export type mainType = "community" | "street" | "unit" | "village" | Number;
 
 class API {
-  // private HOST = 'https://testapi.021xzy.com/'; // 测试环境2
+  private HOST = 'https://testapi.021xzy.com/'; // 测试环境2
   // private HOST = 'https://ticket-api.jia-expo.com'; // 测试环境
-  private HOST = 'https://api.021xzy.com/' // 正式环境
+  // private HOST = 'https://api.021xzy.com/' // 正式环境
 
   private http(URL: string, type: "OPTIONS" | "GET" | "HEAD" | "POST" | "PUT" | "DELETE" | "TRACE" | "CONNECT" | undefined, option: { data?: any, header?: any }, authority?: 'authority') {
     let token = wx.getStorageSync('token')
@@ -92,6 +92,7 @@ class API {
           ..._header
         },
         complete(e: any) {
+          console.log('111', e);
           if (e.statusCode === 200 && e.data.code === 200) {
             successHandle(e);
             resolve(e);
@@ -320,7 +321,8 @@ class API {
         return;
       }
       wx.uploadFile({
-        url: 'https://api.51jiabo.com/file/v2.0/uploadImage', //仅为示例，非真实的接口地址
+        // url: 'https://api.51jiabo.com/file/v2.0/uploadImage', //仅为示例，非真实的接口地址
+        url: 'https://file.021xzy.com/file/v2.0/uploadImage', //仅为示例，非真实的接口地址
         filePath: tempUrl,
         name: 'file',
         timeout: 5000,
@@ -418,6 +420,71 @@ class API {
     subdistrict_id?: number | string,
   }) {
     return this.http('/backend/xcx/SubDistrictDetail', "GET", { data: upData }, 'authority')
+  }
+  public getCommunityDetail2() {
+    return this.http('/backend/xcx/SubDistrictDetail', "GET", { }, 'authority')
+  }
+  // 坐标信息
+  public getCoordinateMsg(address: string) {
+    console.log('123', address)
+    // 小程序接参为汉字是需要转码，下面这种写法
+    // return this.http('/xcx/api/loaction', "POST", { data: upData }, 'authority')
+    return this.http('/xcx/api/loaction', "GET", { data: { address: encodeURI(address) } }, 'authority')
+  }
+  /**
+   * 我的-社区详情2021/8/19
+   */
+  // 基础
+  public jcEdit(data: {
+    subdistrict_id?: number | string,
+    thumb_img: '',
+    household_num: '',
+    building_num: '',
+    volunteer_total: '',
+    cleaner_total: '',
+    house_type: '选择房屋类型',
+    building_time: '选择日期',
+    address: ''
+  }) {
+    return this.http(`/backend/api/sub_district/update`, 'POST', { data: data }, 'authority')
+  }
+  public byEdit(data: {
+    subdistrict_id?: number | string,
+    img_url: '',
+    brand: '',
+    use_type: '',
+    plate_number: '',
+    model: ''
+  }) {
+    return this.http(`/backend/api/addCar`, 'POST', { data: data }, 'authority')
+  }
+  public ljxfEdit(data: {
+    subdistrict_id?: number | string,
+    image_url: '',
+    wing_room_name: '',
+    mark: '',
+    address: '',
+    wing_type: '',
+    infoList: [],
+    classList: []
+  }) {
+    return this.http(`/backend/api/addWingRoom`, 'POST', { data: data }, 'authority')
+  }
+  // 删除驳运
+  public deleteBy(data: {
+    subdistrict_id?: number | string,
+    car_id?: number | string,
+    del_flag?: number | string
+  }) {
+    return this.http(`/backend/api/addCar`, 'POST', { data: data }, 'authority')
+  }
+  // 删除垃圾箱房
+  public deleteLjxf(data: {
+    // subdistrict_id?: number | string,
+    wing_room_id?: number | string,
+    del_flag?: number | string
+  }) {
+    return this.http(`/backend/api/wingRoomUpdate`, 'POST', { data: data }, 'authority')
   }
 
   /**
@@ -532,6 +599,8 @@ class API {
     status: 'all' | 'pending' | 'notyet' | 'done' | number | string,
     page: number | string,
     name?: string,
+    begin_create_date?: string,
+    end_create_date?: string,
     pageSize?: number,
     defuct_id?: number | string,
     category_id?: number | string

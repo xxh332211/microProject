@@ -1,5 +1,7 @@
 {
   "navigationBarBackgroundColor":"#FF625D",
   "navigationBarTitleText":"",
-  "usingComponents": {}
+  "usingComponents": {
+    "l-button":"/components/button"
+  }
 }

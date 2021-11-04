@@ -1,0 +1,307 @@
+<!--miniprogram/pages/bigscreen/details/details.wxml-->
+<view class="activity">
+  <view class="tab">
+    <view class="single {{current==='jc'?'selected':''}}" data-type="jc" bindtap="tap">
+      <text>基础</text>
+      <view class="line"></view>
+    </view>
+    <view class="single {{current==='shlj'?'selected':''}}" data-type="shlj" bindtap="tap">
+      <text>生活垃圾</text>
+      <view class="line"></view>
+    </view>
+    <view class="single {{current==='by'?'selected':''}}" data-type="by" bindtap="tap">
+      <text>驳运</text>
+      <view class="line"></view>
+    </view>
+    <view class="single {{current==='ljxf'?'selected':''}}" data-type="ljxf" bindtap="tap">
+      <text>垃圾箱房</text>
+      <view class="line"></view>
+    </view>
+  </view>
+
+  <!-- 基础 -->
+  <view class="forms" wx:if="{{current==='jc'}}">
+    <l-form name="login" l-form-btn-class="l-form-btn-class" bind:linsubmit="submit1">
+      <view class="single">
+        <view class="inputtitle">小区名</view>
+        <l-input id="title1" l-class="input_box" value="{{detailsObj.subdistrict_name}}" bind:lininput="inputform1" bind:linblur="inputform1" data-key="subdistrict_name" hide-label show-row="{{false}}" placeholder="禁止输入" disabled="{{true}}"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">小区图片</view>
+        <l-image-picker style="margin-top:30rpx;" size="4" urls="{{jcData.thumb_img}}" l-item-class="picker_b" l-class="picker_c" bind:linchange="onImgChangeTap" bind:linremove="onRemoveImgTap" size-type="compressed" l-item-class="picker" count="9" />
+        </view>
+      <view class="single">
+        <view class="inputtitle">户数（户）</view>
+        <l-input id="title3" l-class="input_box" value="{{jcData.household_num}}" bind:lininput="inputform1"
+          bind:linblur="inputform1" data-key="household_num" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">楼栋数（个）</view>
+        <l-input id="title4" l-class="input_box" value="{{jcData.building_num}}" bind:lininput="inputform1"
+          bind:linblur="inputform1" data-key="building_num" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">志愿队伍（人）</view>
+        <l-input id="title5" l-class="input_box" value="{{jcData.volunteer_total}}" bind:lininput="inputform1"
+          bind:linblur="inputform1" data-key="volunteer_total" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">保洁人员（人）</view>
+        <l-input id="title5" l-class="input_box" value="{{jcData.cleaner_total}}" bind:lininput="inputform1"
+          bind:linblur="inputform1" data-key="cleaner_total" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">房屋类型</view>
+      <picker mode="selector" bindchange="inputform1" data-key="house_type" value="{{index}}" range="{{array}}">
+        <view class="picker_date">
+          {{array[jcData.house_type]||'选择房屋类型'}}
+        </view>
+      </picker>
+      </view>
+      <view class="single">
+        <view class="inputtitle">建成时间</view>
+        <!-- <view class="dateBox"> -->
+          <!-- <picker mode="date" value="{{jcData.building_time}}" start="2021-01-01" end="2030-12-31" bindchange="inputform1" data-key="building_time">
+            <view class="picker_date">
+              {{jcData.building_time}}
+            </view>
+          </picker> -->
+          <!-- <view class="picker_date" bindtap="showDate">
+            {{date?date:'选择建成时间'}}
+          </view> -->
+          <!-- <van-calendar
+            show="{{ showDate }}"
+            bind:close="onClose" 
+            bind:confirm="onConfirm" 
+            min-date="{{ minDate }}"
+            max-date="{{ maxDate }}"
+            show-confirm="{{ false }}"
+          /> -->
+          <l-input id="title5" l-class="input_box" value="{{jcData.building_time}}" bind:lininput="inputform1"
+          bind:linblur="inputform1" data-key="building_time" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+        <!-- </view> -->
+      </view>
+
+      <view class="single">
+        <view class="inputtitle">物业公司</view>
+        <l-input id="title5" l-class="input_box" value="{{detailsObj.property_name}}" bind:lininput="inputform1"
+          bind:linblur="inputform1" data-key="property_name" hide-label show-row="{{false}}" placeholder="禁止输入" disabled="{{true}}"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">所属居委</view>
+        <l-input id="title5" l-class="input_box" value="{{detailsObj.committee_name}}" bind:lininput="inputform1"
+          bind:linblur="inputform1" data-key="committee_name" hide-label show-row="{{false}}" placeholder="禁止输入" disabled="{{true}}"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">小区地址</view>
+        <l-input id="title5" l-class="input_box" value="{{updata.address}}" bind:lininput="inputform1"
+          bind:linblur="inputform1" data-key="address" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">分类管理人</view>
+        <l-input id="title5" l-class="input_box" value="{{updata.class_manager}}" bind:lininput="inputform1"
+          bind:linblur="inputform1" data-key="class_manager" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">分类管理人电话</view>
+        <l-input id="title5" l-class="input_box" value="{{updata.class_manager_mobile}}" bind:lininput="inputform1" bind:linblur="inputform1" data-key="class_manager_mobile" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">保洁员</view>
+        <l-input id="title5" l-class="input_box" value="{{updata.cleaner_person}}" bind:lininput="inputform1"
+          bind:linblur="inputform1" data-key="cleaner_person" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">保洁员联系电话</view>
+        <l-input id="title5" l-class="input_box" value="{{updata.cleaner_mobile}}" bind:lininput="inputform1"
+          bind:linblur="inputform1" data-key="cleaner_mobile" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+      </view>
+
+      <view slot="submit" class="submitbtn">
+        <l-button type="success" l-class="btn">提交</l-button>
+      </view>
+    </l-form>
+  </view>
+
+  <!-- 生活垃圾 -->
+  <view class="forms" wx:if="{{current==='shlj'}}">
+    <l-form name="login" l-form-btn-class="l-form-btn-class" bind:linsubmit="submit3">
+      <view class="single">
+        <view class="inputtitle">干垃圾（桶）</view>
+        <l-input id="title1" l-class="input_box" value="{{shljData.dry_garbage_container}}" bind:lininput="inputform3" bind:linblur="inputform3" data-key="dry_garbage_container" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">湿垃圾（桶）</view>
+        <l-input id="title2" l-class="input_box" value="{{shljData.wet_refuse_container}}" bind:lininput="inputform3" bind:linblur="inputform3" data-key="wet_refuse_container" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">有害垃圾（桶）</view>
+        <l-input id="title3" l-class="input_box" value="{{shljData.recyclable_garbage_container}}" bind:lininput="inputform3" bind:linblur="inputform3" data-key="recyclable_garbage_container" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">可回收垃圾（kg）</view>
+        <l-input id="title4" l-class="input_box" value="{{shljData.hazardous_waste_container}}" bind:lininput="inputform3" bind:linblur="inputform3" data-key="hazardous_waste_container" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+      </view>
+      <view class="single">
+        <view class="inputtitle">建筑垃圾（车）</view>
+        <l-input id="title33" l-class="input_box" value="{{shljData.building_waste_container}}" bind:lininput="inputform3" bind:linblur="inputform3" data-key="building_waste_container" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+      </view>
+
+      <view slot="submit" class="submitbtn">
+        <l-button type="success" l-class="btn">提交</l-button>
+      </view>
+    </l-form>
+  </view>
+
+  <!-- 驳运 -->
+  <view wx:if="{{current==='by'}}">
+    <view class="forms by_form" wx:for="{{detailsObj.car}}" wx:key="index">
+      <view class="by_img">
+        <block wx:for="{{item.image_url}}" wx:for-item="imgUrl" wx:key="index">
+          <image class="pic" wx:if="imgUrl" src="{{imgUrl}}"></image>
+        </block>
+      </view>
+      <view class="list1">品牌：{{item.brand?item.brand:''}}</view>
+      <view class="list2">用途：{{item.use_type?item.use_type:''}}</view>
+      <view class="delete_cha" bindtap="delete2" data-car_id="{{item.car_id}}">
+        <image class="cha" mode="aspectFill" src="../../../static/jia@2x.png"></image>
+      </view>
+    </view>
+    <view slot="submit" class="by_submitbtn">
+      <l-button type="success" l-class="btn" bindtap="add2">添加</l-button>
+    </view>
+  </view>
+  <!-- 驳运弹出层 -->
+  <l-popup show="{{isShow2}}" content-align="bottom">    
+    <scroll-view class='pupop-content forms ljxf_pupop' scroll-y="true" scroll-top="5">
+      <view class="pupop_tit">分类驳运机具情况</view>
+      <l-form name="login" l-form-btn-class="l-form-btn-class" bind:linsubmit="submit4">
+        <view class="single">
+          <view class="inputtitle">车牌</view>
+          <l-input id="title2" l-class="input_box" value="{{byData.plate_number}}" bind:lininput="inputform"
+            bind:linblur="inputform4" data-key="plate_number" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+        </view>
+        <view class="single">
+          <view class="inputtitle">型号</view>
+          <l-input id="title11" l-class="input_box" value="{{byData.model}}" bind:lininput="inputform2"
+            bind:linblur="inputform4" data-key="model" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+        </view>
+        <view class="single">
+          <view class="inputtitle">品牌</view>
+          <l-input id="title2" l-class="input_box" value="{{byData.brand}}" bind:lininput="inputform"
+            bind:linblur="inputform4" data-key="brand" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+        </view>
+        <view class="single">
+          <view class="inputtitle">用途</view>
+          <l-input id="title11" l-class="input_box" value="{{byData.use_type}}" bind:lininput="inputform2"
+            bind:linblur="inputform4" data-key="use_type" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+        </view>
+        <view class="single">
+          <view class="inputtitle">驳运机具</view>
+          <l-image-picker style="margin-top:30rpx;" size="3" urls="{{byData.img_url}}" l-item-class="picker_b" l-class="picker_c" bind:linchange="onImgChangeTap2" bind:linremove="onRemoveImgTap2" size-type="compressed" l-item-class="picker" count="9" />
+        </view>
+        <view slot="submit" class="submitbtn">
+          <l-button type="success" l-class="btn">提交</l-button>
+        </view>
+      </l-form>
+    </scroll-view>
+  </l-popup>
+
+  <!-- 垃圾箱房 -->
+  <view wx:if="{{current==='ljxf'}}">
+    <view class="forms by_form" wx:for="{{detailsObj.wing_room}}" wx:key="index">
+      <view class="by_img">
+        <block wx:for="{{item.image_url}}" wx:for-item="imgUrl" wx:key="index">
+          <image class="pic" src="{{imgUrl}}"></image>
+        </block>
+      </view>
+      <view class="list1">六定标识编号：{{item.mark?item.mark:''}}</view>
+      <view class="list1">箱房位置：{{item.address?item.address:''}}</view>
+      <view class="list1">箱房性质：{{item.wing_type_name?item.wing_type_name:''}}</view>
+      <view class="list1">箱房基建配套：{{item.supportingFacilities?item.supportingFacilities:''}}</view>
+      <view class="list2">分类投口设置：{{item.input?item.input:''}}</view>
+      <view class="delete_cha" bindtap="delete3" data-wing_room_id="{{item.wing_room_id}}">
+        <image class="cha" mode="aspectFill" src="../../../static/jia@2x.png"></image>
+      </view>
+    </view>
+    <view slot="submit" class="by_submitbtn">
+      <l-button type="success" l-class="btn" bindtap="add3">添加</l-button>
+    </view>
+  </view>
+  <!-- 垃圾箱房弹出层 -->
+  <l-popup show="{{isShow3}}" content-align="bottom">    
+    <scroll-view class='pupop-content forms ljxf_pupop' scroll-y="true" scroll-top="5">
+      <view class="pupop_tit">生活垃圾箱房</view>
+      <l-form name="login" l-form-btn-class="l-form-btn-class" bind:linsubmit="submit5">
+        <view class="single">
+          <view class="inputtitle">箱房标题</view>
+          <l-input id="title2" l-class="input_box" value="{{ljxfData.wing_room_name}}" bind:lininput="inputform"
+            bind:linblur="inputform5" data-key="wing_room_name" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+        </view>
+        <view class="single">
+          <view class="inputtitle">六定标识编号</view>
+          <l-input id="title2" l-class="input_box" value="{{ljxfData.mark}}" bind:lininput="inputform"
+            bind:linblur="inputform5" data-key="mark" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+        </view>
+        <view class="single">
+          <view class="inputtitle">箱房位置</view>
+          <!-- <l-input id="title11" l-class="input_box" value="{{ljxfData.address}}" bind:lininput="inputform5"
+            bind:linblur="inputform2" data-key="address" hide-label show-row="{{false}}" placeholder="请输入内容"/> -->
+            <view class="picker_date" bindtap='getCurrentLocal' style="margin-bottom:20rpx;">
+              选择箱房位置
+            </view>
+            <l-input wx:if="{{address!==''}}" id="title2" l-class="input_box" value="{{address}}" bind:lininput="inputform" bind:linblur="inputform5" data-key="address" hide-label show-row="{{false}}" placeholder="请输入内容"/>
+        </view>
+        <view class="single">
+          <view class="inputtitle">箱房性质</view>
+          <picker mode="selector" bindchange="inputform5" data-key="wing_type" value="{{index}}" range="{{array2}}"><view class="picker_date">{{array2[ljxfData.wing_type]||'选择箱房性质'}}</view>
+          </picker>
+        </view>
+        <view class="single">
+          <view class="inputtitle">箱房基建配套</view>
+          <view class="weui-cells weui-cells_after-title">
+            <checkbox-group bindchange="onChangeTap">
+            <view wx:for="{{items1}}" wx:key="index">
+              <label class="weui-cell weui-check__label">
+                <view class="weui-cell__hd">
+                  <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
+                </view>
+                <view class="weui-cell__bd">{{item.name}}</view>
+              </label>
+            </view>
+            </checkbox-group>
+          </view>
+        </view>
+        <view class="single">
+          <view class="inputtitle">分类头口设置</view>
+          <view class="weui-cells weui-cells_after-title">
+            <checkbox-group bindchange="checkboxChange">
+              <view wx:for="{{items}}" wx:key="index">
+                <label class="weui-cell weui-check__label">
+                  <view class="weui-cell__hd">
+                    <checkbox value="{{item.value}}" checked="{{item.checked}}"/>
+                  </view>
+                  <view class="weui-cell__bd">{{item.name}}</view>
+                </label>
+              </view>
+            </checkbox-group>
+          </view>
+        </view>
+        <view class="single">
+          <view class="inputtitle">箱房图片</view>
+          <l-image-picker style="margin-top:30rpx;" size="3" urls="{{ljxfData.image_url}}" l-item-class="picker_b" l-class="picker_c" bind:linchange="onImgChangeTap3" bind:linremove="onRemoveImgTap3" size-type="compressed" l-item-class="picker" count="9" />
+        </view>
+
+        <view slot="submit" class="submitbtn">
+          <l-button type="success" l-class="btn">提交</l-button>
+        </view>
+      </l-form>
+    </scroll-view>
+  </l-popup>
+</view>
+
+<l-toast
+  show="{{show}}"
+  icon="success"
+  title="提交成功"
+/>

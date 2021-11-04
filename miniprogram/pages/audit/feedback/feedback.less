@@ -53,6 +53,33 @@ page{
       margin-top: 30rpx;
       padding-left: 20rpx;
       padding-right: 20rpx;
+      .dateBox {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 20rpx;
+        padding: 0 20rpx;
+        // margin-left: 20rpx;
+        .picker_date {
+          // display: inline-block;
+          // padding: 10rpx 20rpx;
+          // background: #FF5175;
+          // // width: 200rpx;
+          // color: #fff;
+          // border-radius: 10rpx;
+          .input_box {
+            height: 60rpx;
+            background: #FFFFFF;
+            border: 2rpx solid #DDE1ED;
+            opacity: 1;
+            border-radius: 30rpx;
+            .input_label::before {
+              content: '' !important;
+              display: none !important;
+            }
+          }
+        }
+      }
     }
     .list {
       padding-left: 39rpx;

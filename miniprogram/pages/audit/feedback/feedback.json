@@ -3,6 +3,7 @@
   "usingComponents": {
     "l-icon":"/components/icon",
     "l-button":"/components/button",
+    "l-input":"/components/input",
     "l-search":"/components/search-bar"
   }
 }

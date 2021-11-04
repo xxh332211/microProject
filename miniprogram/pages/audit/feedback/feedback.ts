@@ -13,6 +13,8 @@ Page({
     height:'',
     page:1,
     total:0,
+    startDate: '',
+    endDate: '',
     user:<any>{}
   },
   scroll () {
@@ -38,7 +40,9 @@ Page({
       type:<mainType>this.data.feedbackType,
       status:this.data.current,
       page:this.data.page,
-      name:this.data.keyword
+      name:this.data.keyword,
+      begin_create_date: this.data.startDate,
+      end_create_date: this.data.endDate
     }
     api.getFeedbackList(data).then((res:any)=>{
       if (reset) {
@@ -81,6 +85,16 @@ Page({
     wx.setStorageSync('category_id',e.currentTarget.dataset.category_id)
     wx.setStorageSync('defuct_id',e.currentTarget.dataset.defuct_id)
     wx.navigateTo({url:'/pages/audit/feedback/upFeedback/upFeedback'})
+  },
+  startChange(e: any) {
+    let startDate = e.detail.currentKey || e.detail.value
+    // console.log(startDate)
+    this.setData({startDate: startDate})
+  },
+  endChange(e: any) {
+    let endDate = e.detail.currentKey || e.detail.value
+    // console.log(endDate)
+    this.setData({endDate: endDate})
   },
   /**
    * 生命周期函数--监听页面加载

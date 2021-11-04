@@ -55,6 +55,21 @@
         <l-icon name="toRight-fill" l-class="iconfont"></l-icon>
       </view>
     </view>
+
+    <view class="big_nav" bindtap="go" data-url="/pages/bigscreen/details/details">
+      <view class="left">
+        <view class="title">
+          <l-icon name="yemianpeizhi" l-class="iconfont"></l-icon>
+          <text>社区详情</text>
+        </view>
+        <view class="subtitle">
+        </view>
+      </view>
+      <view class="right">
+        <l-icon name="toRight-fill" l-class="iconfont"></l-icon>
+      </view>
+    </view>
+
   </view>
 </view>
 <tabbar current="adminUser"></tabbar>

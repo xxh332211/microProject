@@ -1,0 +1,181 @@
+Index: project.config.json.BASE.json
+===================================================================
+--- project.config.json.BASE.json	(revision 5188b6da3813596a7faa83d91051279c435d498c)
++++ project.config.json.BASE.json	(revision 5188b6da3813596a7faa83d91051279c435d498c)
+@@ -1,54 +0,0 @@
+-{
+-  "description": "项目配置文件",
+-  "packOptions": {
+-    "ignore": []
+-  },
+-  "miniprogramRoot": "miniprogram/",
+-  "compileType": "miniprogram",
+-  "libVersion": "2.12.2",
+-  "projectname": "miniprogram-4",
+-  "scripts": {
+-    "beforeCompile": "npm run tsc",
+-    "beforePreview": "npm run wxss",
+-    "beforeUpload": "npm run wxss"
+-  },
+-  "setting": {
+-    "urlCheck": false,
+-    "es6": true,
+-    "enhance": true,
+-    "postcss": true,
+-    "preloadBackgroundData": false,
+-    "minified": true,
+-    "newFeature": false,
+-    "coverView": true,
+-    "nodeModules": true,
+-    "autoAudits": false,
+-    "showShadowRootInWxmlPanel": true,
+-    "scopeDataCheck": false,
+-    "uglifyFileName": false,
+-    "checkInvalidKey": true,
+-    "checkSiteMap": true,
+-    "uploadWithSourceMap": true,
+-    "compileHotReLoad": false,
+-    "useMultiFrameRuntime": false,
+-    "useApiHook": true,
+-    "babelSetting": {
+-      "ignore": [],
+-      "disablePlugins": [],
+-      "outputPath": ""
+-    },
+-    "enableEngineNative": false,
+-    "bundle": true,
+-    "useIsolateContext": true,
+-    "useCompilerModule": true,
+-    "userConfirmedUseCompilerModuleSwitch": false,
+-    "userConfirmedBundleSwitch": true,
+-    "packNpmManually": false,
+-    "packNpmRelationList": [],
+-    "minifyWXSS": true
+-  },
+-  "simulatorType": "wechat",
+-  "simulatorPluginLibVersion": {},
+-  "appid": "wxc3c31fa84eb89495",
+-  "condition": {}
+-}
+\ No newline at end of file
+Index: project.config.json.LOCAL.json
+===================================================================
+--- project.config.json.LOCAL.json	(revision 5188b6da3813596a7faa83d91051279c435d498c)
++++ project.config.json.LOCAL.json	(revision 5188b6da3813596a7faa83d91051279c435d498c)
+@@ -1,54 +0,0 @@
+-{
+-  "description": "项目配置文件",
+-  "packOptions": {
+-    "ignore": []
+-  },
+-  "miniprogramRoot": "miniprogram/",
+-  "compileType": "miniprogram",
+-  "libVersion": "2.12.2",
+-  "projectname": "miniprogram-4",
+-  "scripts": {
+-    "beforeCompile": "npm run tsc",
+-    "beforePreview": "npm run wxss",
+-    "beforeUpload": "npm run wxss"
+-  },
+-  "setting": {
+-    "urlCheck": false,
+-    "es6": true,
+-    "enhance": true,
+-    "postcss": true,
+-    "preloadBackgroundData": false,
+-    "minified": true,
+-    "newFeature": false,
+-    "coverView": true,
+-    "nodeModules": true,
+-    "autoAudits": false,
+-    "showShadowRootInWxmlPanel": true,
+-    "scopeDataCheck": false,
+-    "uglifyFileName": false,
+-    "checkInvalidKey": true,
+-    "checkSiteMap": true,
+-    "uploadWithSourceMap": true,
+-    "compileHotReLoad": false,
+-    "useMultiFrameRuntime": false,
+-    "useApiHook": false,
+-    "useApiHostProcess": false,
+-    "babelSetting": {
+-      "ignore": [],
+-      "disablePlugins": [],
+-      "outputPath": ""
+-    },
+-    "enableEngineNative": false,
+-    "useIsolateContext": true,
+-    "useCompilerModule": true,
+-    "userConfirmedUseCompilerModuleSwitch": false,
+-    "userConfirmedBundleSwitch": true,
+-    "packNpmManually": false,
+-    "packNpmRelationList": [],
+-    "minifyWXSS": true
+-  },
+-  "simulatorType": "wechat",
+-  "simulatorPluginLibVersion": {},
+-  "appid": "wxc3c31fa84eb89495",
+-  "condition": {}
+-}
+\ No newline at end of file
+Index: project.config.json.REMOTE.json
+===================================================================
+--- project.config.json.REMOTE.json	(revision 5188b6da3813596a7faa83d91051279c435d498c)
++++ project.config.json.REMOTE.json	(revision 5188b6da3813596a7faa83d91051279c435d498c)
+@@ -1,55 +0,0 @@
+-{
+-  "description": "项目配置文件",
+-  "packOptions": {
+-    "ignore": []
+-  },
+-  "miniprogramRoot": "miniprogram/",
+-  "compileType": "miniprogram",
+-  "libVersion": "2.12.2",
+-  "projectname": "miniprogram-4",
+-  "scripts": {
+-    "beforeCompile": "npm run tsc",
+-    "beforePreview": "npm run wxss",
+-    "beforeUpload": "npm run wxss"
+-  },
+-  "setting": {
+-    "urlCheck": false,
+-    "es6": true,
+-    "enhance": true,
+-    "postcss": true,
+-    "preloadBackgroundData": false,
+-    "minified": true,
+-    "newFeature": false,
+-    "coverView": true,
+-    "nodeModules": true,
+-    "autoAudits": false,
+-    "showShadowRootInWxmlPanel": true,
+-    "scopeDataCheck": false,
+-    "uglifyFileName": false,
+-    "checkInvalidKey": true,
+-    "checkSiteMap": true,
+-    "uploadWithSourceMap": true,
+-    "compileHotReLoad": false,
+-    "useMultiFrameRuntime": true,
+-    "useApiHook": true,
+-    "babelSetting": {
+-      "ignore": [],
+-      "disablePlugins": [],
+-      "outputPath": ""
+-    },
+-    "enableEngineNative": false,
+-    "bundle": false,
+-    "useIsolateContext": true,
+-    "useCompilerModule": true,
+-    "userConfirmedUseCompilerModuleSwitch": false,
+-    "userConfirmedBundleSwitch": true,
+-    "packNpmManually": false,
+-    "packNpmRelationList": [],
+-    "minifyWXSS": true,
+-    "useApiHostProcess": true
+-  },
+-  "simulatorType": "wechat",
+-  "simulatorPluginLibVersion": {},
+-  "appid": "wxc3c31fa84eb89495",
+-  "condition": {}
+-}
+\ No newline at end of file
